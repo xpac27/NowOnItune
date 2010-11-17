@@ -92,36 +92,8 @@
     {
         switch ($_GET['page'])
         {
-            case 'homepage':
-                $page = new Page_Homepage();
-                break;
-
-            case 'register':
-                $page = new Page_Register();
-                break;
-
-            case 'logout':
-                $page = new Page_Logout();
-                break;
-
-            case 'question':
-                $page = new Page_Question();
-                break;
-
-            case 'user':
-                $page = new Page_User();
-                break;
-
-            case 'user_edit':
-                $page = new Page_User_Edit();
-                break;
-
-            case 'user_confirm':
-                $page = new Page_User_Confirm();
-                break;
-
-            case 'submit':
-                $page = new Page_Submit();
+            case 'band':
+                $page = new Page_Band();
                 break;
 
             default :

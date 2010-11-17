@@ -8,17 +8,21 @@
     $conf['ROOT_DIR']  = '/Users/USER_NAME/Sites/NowOnItune/';
 
     // DATABASE
-    $conf['DB_NAME']   = 'nowOnItune';
-    $conf['DB_HOST']   = 'localhost';
-    $conf['DB_USER']   = 'root';
-    $conf['DB_PASS']   = '';
-    $conf['DB_PRE']    = '';
+    $conf['DB_NAME']     = 'nowOnItune';
+    $conf['DB_HOST']     = 'localhost';
+    $conf['DB_USER']     = 'root';
+    $conf['DB_PASS']     = '';
+    $conf['DB_PRE']      = '';
+    $conf['DB_READONLY'] = false;
 
     // CACHE
     $conf['CACHE_TIMECOEF'] = 0;
 
     // ENV
     $conf['PROD'] = false;
+
+    // ENV
+    $conf['BAND_IMAGE_SIZE'] = '750x850';
 
     // CONTENT
     $conf['SITE_NAME']         = utf8_encode ('NowOnItune');

@@ -10,3 +10,7 @@ css/stylesheets
 js/_prod/*.js
 js/_gen/*.js
 js/_gen/lib/*.js
+
+media/band/*/*
+!media/band/*/*.txt
+!media/band/*/0.jpg
