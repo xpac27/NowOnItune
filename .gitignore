@@ -1,0 +1,12 @@
+.DS_Store
+
+Icon*
+
+conf/local.php
+
+css/.sass-cache
+css/stylesheets
+
+js/_prod/*.js
+js/_gen/*.js
+js/_gen/lib/*.js

@@ -1,0 +1,34 @@
+SetEnv magic_quotes_gpc 1
+SetEnv magic_quotes_runtime 0
+SetEnv magic_quotes_sybase 0
+SetEnv REGISTER_GLOBALS 0
+
+#AddHandler php5-script .php
+
+RewriteEngine on
+
+#RewriteCond %{HTTP_HOST} ^.*aaaaaaaaaaa\.org [NC]
+#RewriteCond %{HTTP_HOST} !^www\.aaaaaaaaaaa.org [NC]
+#RewriteRule ^(.*)  http://www.aaaaaaaaaaa.org/$1 [L,R]
+
+#HOME
+RewriteRule ^/?$ index.php?page=homepage [L]
+
+# REMOTE
+RewriteRule ^remote/([a-zA-Z0-9_\/]+)$ index.php?remote=$1 [L,QSA]
+
+# REGISTER
+RewriteRule ^register$ index.php?page=register [L]
+RewriteRule ^register/confirm$ index.php?page=register_confirm [L,QSA]
+
+# LOGOUT
+RewriteRule ^logout$ index.php?remote=logout [L]
+
+# USER
+RewriteRule ^([a-zA-Z0-9_]+)$ index.php?page=user&login=$1 [L]
+RewriteRule ^([a-zA-Z0-9_]+)/edit$ index.php?page=user_edit&login=$1 [L]
+
+# BACKOFFICE
+RewriteRule ^backoffice/?$ backoffice/index.php [L]
+RewriteRule ^backoffice/remote/([a-zA-Z0-9_]+)$ backoffice/index.php?remote=$1 [L,QSA]
+
