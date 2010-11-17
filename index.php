@@ -92,6 +92,10 @@
     {
         switch ($_GET['page'])
         {
+            case 'homepage':
+                $page = new Page_Homepage();
+                break;
+
             case 'band':
                 $page = new Page_Band();
                 break;
@@ -103,5 +107,9 @@
         $page->configureView();
 
         Globals::$tpl->display();
+    }
+    else
+    {
+        // TODO 404
     }
 
