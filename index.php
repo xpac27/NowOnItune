@@ -100,6 +100,18 @@
                 $page = new Page_Band();
                 break;
 
+            case 'top':
+                $page = new Page_Top();
+                break;
+
+            case 'latest':
+                $page = new Page_Latest();
+                break;
+
+            case 'random':
+                $page = new Page_Random();
+                break;
+
             default :
                 $page = new Page();
         }

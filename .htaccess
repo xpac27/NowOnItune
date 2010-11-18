@@ -17,6 +17,15 @@ RewriteRule ^/?$ index.php?page=homepage [L]
 # REMOTE
 RewriteRule ^remote/([a-zA-Z0-9_\/]+)$ index.php?remote=$1 [L]
 
+# TOP
+RewriteRule ^top$ index.php?page=top [L]
+
+# RANDOM
+RewriteRule ^random$ index.php?page=random [L]
+
+# LATEST
+RewriteRule ^latest$ index.php?page=latest [L]
+
 # BAND
 RewriteRule ^([a-zA-Z0-9]+)$ index.php?page=band&id=$1 [L]
 
