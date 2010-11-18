@@ -20,5 +20,5 @@
 </head>
 <body>
 
-    <div classs="main_content">
+    <div class="main_content">
 

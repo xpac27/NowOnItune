@@ -19,6 +19,12 @@ class Block_Top extends Block
             Globals::$tpl->assignVar('warning', $_SESSION['warning']);
             unset($_SESSION['warning']);
         }
+
+        Globals::$tpl->assignvar(array
+        (
+            'twitter_status'  => urlencode('Check this out! ' . Conf::get('ROOT_PATH') . ' @NowOniTunes'),
+            'facebook_status' => urlencode('Now on iTunes.'),
+        ));
     }
 }
 

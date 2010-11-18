@@ -22,7 +22,7 @@
     $conf['PROD'] = false;
 
     // ENV
-    $conf['BAND_IMAGE_SIZE'] = '750x850';
+    $conf['BAND_IMAGE_SIZE'] = '725x855';
 
     // CONTENT
     $conf['SITE_NAME']         = utf8_encode ('NowOnItune');

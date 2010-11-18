@@ -6,9 +6,15 @@ class Remote_Submit extends Remote
 
     public function configureData()
     {
-        if (!Tool::isOk($_POST['band_name']) || !isset($_FILES) || !Tool::isOk($_FILES['band_cover']) || $_FILES['band_cover']['error'] == 4)
+        if (!Tool::isOk($_POST['captcha']) || !Tool::isOk($_POST['band_name']) || !isset($_FILES) || !Tool::isOk($_FILES['band_cover']) || $_FILES['band_cover']['error'] == 4)
         {
             $_SESSION['feedback'] = 'You must complet the "brand\'s name" and the "brand\'s cover" field !';
+            header('Location: ' . Conf::get('ROOT_PATH'));
+            exit();
+        }
+        else if ($_SESSION['captcha'] != $_POST['captcha'])
+        {
+            $_SESSION['feedback'] = 'Invalid information !';
             header('Location: ' . Conf::get('ROOT_PATH'));
             exit();
         }
@@ -44,7 +50,7 @@ class Remote_Submit extends Remote
         }
         else
         {
-            $_SESSION['feedback'] = 'The file you sent is not valid !';
+            $_SESSION['feedback'] = 'The file you sent is not valid ! JPG, PNG or GIF, 450KB 1680x1680px max';
             header('Location: ' . Conf::get('ROOT_PATH'));
             exit();
         }
@@ -52,5 +58,4 @@ class Remote_Submit extends Remote
         header('Location: ' . Conf::get('ROOT_PATH'). base_convert(strval($id), 10, 36));
     }
 }
-
 

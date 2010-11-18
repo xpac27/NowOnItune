@@ -1,8 +1,25 @@
 $black: #000
+$white: #fff
+$blue: #0088cc
+$grey: #8a8a8a
+$light_grey: #ccc
+$dark_grey: #d5d5d5
+$batman_grey: #aaa
+
+$border_radius_normal: 4px
+$border_radius_large: 6px
+
+$font_large: 50px
+$font_medium: 26px
+$font_normal: 18px
+$font_small: 12px
+$font_tiny: 10px
 
 @import compass/css3
 @import compass/reset
 @import compass/utilities/general
++font-face("myriad_1", font-files("MyriadPro-Semibold.otf", opentype))
++font-face("myriad_2", font-files("MyriadPro-Regular.otf", opentype))
 
 @import view/block/top
 @import view/homepage
@@ -12,18 +29,67 @@ $black: #000
 @import view/latest
 
 .main_content
-    max-width: 1050px
-    min-width: 880px
+    width: 980px
     margin: 0 auto
-    padding: 0 20px
+    padding: 0
     position: relative
 
 
 /* ========================== BODY */
 
 body
-    background: #ffffff image-url('background_texture.gif')
+    background: image-url('background.jpg')
     font-family: myriad, sans-serif
-    font-size: 10px
+    font-size: $font_small
     color: $black
+
+
+/* ========================== PAGE */
+
+.page
+    background: $white
+    border: 1px solid $dark_grey
+    padding: 20px
+    margin: 0 0 20px 0
+    +border-radius($border_radius_normal)
+
+
+/* ========================== FOOTER */
+
+#footer
+    color: $batman_grey
+    line-height: 14px
+    margin: 0 0 20px 0
+
+    .right
+        float: right
+
+
+/* ========================== A */
+
+a
+    color: $blue
+    text-decoration: none
+
+a:hover
+    text-decoration: underline
+
+/* ========================== H1 */
+
+h1
+    font-size: $font_large
+    color: $black
+    font-family: myriad_1
+    text-align: center
+    margin: 30px 0 10px 0
+
+
+/* ========================== H2 */
+
+h2
+    font-size: $font_medium
+    color: $grey
+    font-family: myriad_2
+    text-align: center
+    margin: 0 0 5px 0
 
