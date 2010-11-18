@@ -26,7 +26,7 @@
 
     // CONTENT
     $conf['SITE_NAME']         = utf8_encode ('NowOnItune');
-    $conf['PAGE_TITLE']        = utf8_encode ('Apple');
+    $conf['PAGE_TITLE']        = utf8_encode ('Now on iTune.');
     $conf['PAGE_DESCRIPTION']  = utf8_encode ('');
     $conf['PAGE_KEYWORDS']     = utf8_encode ('');
 
