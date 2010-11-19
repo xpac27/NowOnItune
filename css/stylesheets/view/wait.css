@@ -1,0 +1,9 @@
+/* line 1, ../../src/view/wait.sass */
+#wait {
+  margin-top: 20px;
+  height: 400px;
+}
+/* line 5, ../../src/view/wait.sass */
+#wait h1 {
+  margin-top: 130px;
+}

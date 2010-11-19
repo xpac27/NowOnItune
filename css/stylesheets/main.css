@@ -258,7 +258,17 @@ a img {
   float: left;
 }
 
-/* line 31, ../src/main.sass */
+/* line 1, ../src/view/wait.sass */
+#wait {
+  margin-top: 20px;
+  height: 400px;
+}
+/* line 5, ../src/view/wait.sass */
+#wait h1 {
+  margin-top: 130px;
+}
+
+/* line 32, ../src/main.sass */
 .main_content {
   width: 980px;
   margin: 0 auto;
@@ -267,7 +277,7 @@ a img {
 }
 
 /* ========================== BODY */
-/* line 40, ../src/main.sass */
+/* line 41, ../src/main.sass */
 body {
   background: url('../../media/layout/background.jpg?1290081584');
   font-family: myriad, sans-serif;
@@ -276,7 +286,7 @@ body {
 }
 
 /* ========================== PAGE */
-/* line 49, ../src/main.sass */
+/* line 50, ../src/main.sass */
 .page {
   background: white;
   border: 1px solid #d5d5d5;
@@ -291,31 +301,31 @@ body {
 }
 
 /* ========================== FOOTER */
-/* line 59, ../src/main.sass */
+/* line 60, ../src/main.sass */
 #footer {
   color: #aaaaaa;
   line-height: 14px;
   margin: 0 0 20px 0;
 }
-/* line 64, ../src/main.sass */
+/* line 65, ../src/main.sass */
 #footer .right {
   float: right;
 }
 
 /* ========================== A */
-/* line 70, ../src/main.sass */
+/* line 71, ../src/main.sass */
 a {
   color: #0088cc;
   text-decoration: none;
 }
 
-/* line 74, ../src/main.sass */
+/* line 75, ../src/main.sass */
 a:hover {
   text-decoration: underline;
 }
 
 /* ========================== H1 */
-/* line 79, ../src/main.sass */
+/* line 80, ../src/main.sass */
 h1 {
   font-size: 50px;
   color: black;
@@ -325,7 +335,7 @@ h1 {
 }
 
 /* ========================== H2 */
-/* line 89, ../src/main.sass */
+/* line 90, ../src/main.sass */
 h2 {
   font-size: 26px;
   color: #8a8a8a;

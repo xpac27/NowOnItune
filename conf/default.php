@@ -20,8 +20,9 @@
 
     // ENV
     $conf['PROD'] = false;
+    $conf['ONLINE'] = false;
 
-    // ENV
+    // IMAGES
     $conf['BAND_IMAGE_SIZE'] = '725x855';
 
     // CONTENT

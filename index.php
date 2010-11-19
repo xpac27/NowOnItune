@@ -88,6 +88,10 @@
     }
 
     // PAGES
+    if (!Conf::get('ONLINE'))
+    {
+        $_GET['page'] = 'wait';
+    }
     if (isset($_GET['page']))
     {
         switch ($_GET['page'])
@@ -110,6 +114,10 @@
 
             case 'random':
                 $page = new Page_Random();
+                break;
+
+            case 'wait':
+                $page = new Page_Wait();
                 break;
 
             default :
