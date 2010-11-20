@@ -11,6 +11,6 @@ js/_prod/lib.js: js/lib/*.js
 	@echo '... compressing lib.js'
 	java -jar exec/compiler.jar $(JS_LIB) --js_output_file=js/_prod/lib.js --warning_level QUIET
 
-css: css/src
+css: css/**/*.sass
 	compass compile css
 
