@@ -15,7 +15,20 @@
     // AUTOLOADER
     function __autoload($className)
     {
-        include Conf::get('ROOT_DIR') . 'lib/' . str_replace('_', '/', $className) . '.php';
+        $classPath = explode('_', $className);
+        $file = 'lib';
+        foreach ($classPath as $key => $segment)
+        {
+            if ($key == count($classPath) - 1)
+            {
+                $file .= '/' . $segment;
+            }
+            else
+            {
+                $file .= '/' . lcfirst($segment);
+            }
+        }
+        include Conf::get('ROOT_DIR') . $file . '.php';
     }
 
     class Globals
