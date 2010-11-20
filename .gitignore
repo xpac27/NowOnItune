@@ -5,6 +5,7 @@ Icon*
 conf/local.php
 
 css/.sass-cache
+css/stylesheets
 
 media/band/*/*
 !media/band/*/*.txt
