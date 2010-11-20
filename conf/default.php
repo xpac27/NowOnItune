@@ -24,6 +24,11 @@
     $conf['PROD'] = false;
     $conf['ONLINE'] = false;
 
+    // AUTH
+    $conf['AUTH_ENABLED']  = false;
+    $conf['AUTH_USER']     = '';
+    $conf['AUTH_PASSWORD'] = '';
+
     // IMAGES
     $conf['BAND_IMAGE_SIZE'] = '725x855';
 
