@@ -5,7 +5,8 @@ Icon*
 conf/local.php
 
 css/.sass-cache
-css/stylesheets
+css/stylesheets/**
+!css/stylesheets/*.txt
 
 js/_prod/*.js
 js/_gen/*.js
