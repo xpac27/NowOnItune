@@ -7,9 +7,9 @@ SetEnv REGISTER_GLOBALS 0
 
 RewriteEngine on
 
-#RewriteCond %{HTTP_HOST} ^.*aaaaaaaaaaa\.org [NC]
-#RewriteCond %{HTTP_HOST} !^www\.aaaaaaaaaaa.org [NC]
-#RewriteRule ^(.*)  http://www.aaaaaaaaaaa.org/$1 [L,R]
+RewriteCond %{HTTP_HOST} ^.*nowonitunes\.com [NC]
+RewriteCond %{HTTP_HOST} !^www\.nowonitunes.com [NC]
+RewriteRule ^(.*)  http://www.nowonitunes.com/$1 [L,R]
 
 #HOME
 RewriteRule ^/?$ index.php?page=homepage [L]
