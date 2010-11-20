@@ -50,6 +50,7 @@
         'PAGE_DESCRIPTION' => Conf::get('PAGE_DESCRIPTION'),
         'PAGE_KEYWORDS'    => Conf::get('PAGE_KEYWORDS'),
         'ROOT_PATH'        => Conf::get('ROOT_PATH'),
+        'MEDIA_PATH'       => Conf::get('MEDIA_PATH'),
         'VERSION'          => Conf::get('VERSION')
     ));
 

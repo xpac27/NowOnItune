@@ -28,9 +28,9 @@
         </div>
 
         <!-- SECTION feedback -->
-        <p class="message feedback">{{feedback}}</p>
+        <p class="message feedback">#{feedback}</p>
         <!-- END feedback -->
 
         <!-- SECTION warning -->
-        <p class="message warning">{{warning}}</p>
+        <p class="message warning">#{warning}</p>
         <!-- END warning -->

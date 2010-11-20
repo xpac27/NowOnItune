@@ -25,7 +25,7 @@
             </div>
 
             <div class="captcha">
-                <span>Are you human ? <img src="#{ROOT_PATH}remote/captcha" /></span> <input class="catpcha" type="text" value="" name="captcha "/>
+                <span>Are you human ? <img src="#{ROOT_PATH}remote/captcha" /></span> <input class="captcha" type="text" value="" name="captcha" />
             </div>
 
             <div>

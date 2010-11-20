@@ -4,8 +4,10 @@
     $conf['VERSION'] = 000001;
 
     // LOCATION
-    $conf['ROOT_PATH'] = 'http://localhost/NowOnItune/';
-    $conf['ROOT_DIR']  = '/Users/USER_NAME/Sites/NowOnItune/';
+    $conf['ROOT_PATH']  = 'http://localhost/NowOnItunes/';
+    $conf['ROOT_DIR']   = '/Users/USER_NAME/Sites/nowOnItunes/';
+    $conf['MEDIA_PATH'] = 'http://localhost/nowOnItunes/media/';
+    $conf['MEDIA_DIR']  = '/Users/USER_NAME/Sites/nowOnItunes/media/';
 
     // DATABASE
     $conf['DB_NAME']     = 'nowOnItune';

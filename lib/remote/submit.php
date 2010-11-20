@@ -8,7 +8,7 @@ class Remote_Submit extends Remote
     {
         if (!Tool::isOk($_POST['captcha']) || !Tool::isOk($_POST['band_name']) || !isset($_FILES) || !Tool::isOk($_FILES['band_cover']) || $_FILES['band_cover']['error'] == 4)
         {
-            $_SESSION['feedback'] = 'You must complet the "brand\'s name" and the "brand\'s cover" field !';
+            $_SESSION['feedback'] = 'You must complet the "brand\'s name" and the "brand\'s cover" field and fill the captcha !';
             header('Location: ' . Conf::get('ROOT_PATH'));
             exit();
         }
@@ -42,11 +42,11 @@ class Remote_Submit extends Remote
                 $destinationSize = $size;
             }
 
-            $original = Conf::get('ROOT_DIR'). 'media/band/original/' . $id . '.' . $extention;
+            $original = Conf::get('MEDIA_DIR'). 'band/original/' . $id . '.' . $extention;
 
             move_uploaded_file($_FILES['band_cover']['tmp_name'], $original);
 
-            Tool::redimage($original, Conf::get('ROOT_DIR') . 'media/band/' . Conf::get('BAND_IMAGE_SIZE') . '/' . $id . '.jpg', $destinationSize[0], (isset ($destinationSize[1])) ? $destinationSize[1] : false, true);
+            Tool::redimage($original, Conf::get('MEDIA_DIR') . 'band/' . Conf::get('BAND_IMAGE_SIZE') . '/' . $id . '.jpg', $destinationSize[0], (isset ($destinationSize[1])) ? $destinationSize[1] : false, true);
         }
         else
         {

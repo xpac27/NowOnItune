@@ -4,7 +4,7 @@
         <h1>#{band_name}. Now on iTunes.</h1>
 
         <div class="cover">
-            <a href="#{band_homepage}"><img src="#{ROOT_PATH}media/band/725x855/#{band_id}.jpg"/></a>
+            <a href="#{band_homepage}"><img src="#{MEDIA_PATH}band/725x855/#{band_id}.jpg"/></a>
         </div>
 
         <div class="permalink"><strong>permalink:</strong> <a href="#{band_homepage}">#{band_homepage}</a></div>
