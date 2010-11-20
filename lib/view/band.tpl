@@ -1,9 +1,11 @@
 
     <div class="page" id="band">
 
-        <h1>#{band_name}. Now on iTunes.</h1>
+        <div id="band_mask"></div>
 
-        <div class="cover">
+        <h1><span id="band_name">#{band_name}.</span> <span id="band_now">Now on iTunes.</span></h1>
+
+        <div id="band_cover">
             <a href="#{band_homepage}"><img src="#{MEDIA_PATH}band/725x855/#{band_id}.jpg"/></a>
         </div>
 
