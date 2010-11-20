@@ -6,7 +6,7 @@ class Model_Band
 
     public function Model_Band($id, $data = array())
     {
-        if (preg_match('/^(\d+)$/', $id) != 0)
+        if (preg_match('/^([a-zA-Z0-9]+)$/', $id) != 0)
         {
             $this->data = $data;
             $this->data['id'] = is_string($id) ? base_convert(strval($id), 36, 10) : $id;
