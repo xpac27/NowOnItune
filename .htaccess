@@ -9,6 +9,7 @@ RewriteEngine on
 
 RewriteCond %{HTTP_HOST} ^.*nowonitunes\.com [NC]
 RewriteCond %{HTTP_HOST} !^www\.nowonitunes.com [NC]
+RewriteCond %{HTTP_HOST} !^preprod\.nowonitunes.com [NC]
 RewriteRule ^(.*)  http://www.nowonitunes.com/$1 [L,R]
 
 #HOME

@@ -10,7 +10,7 @@
     $conf['MEDIA_DIR']  = '/Users/USER_NAME/Sites/nowOnItunes/media/';
 
     // DATABASE
-    $conf['DB_NAME']     = 'nowOnItune';
+    $conf['DB_NAME']     = 'nowOnItunes';
     $conf['DB_HOST']     = 'localhost';
     $conf['DB_USER']     = 'root';
     $conf['DB_PASS']     = '';
@@ -28,8 +28,8 @@
     $conf['BAND_IMAGE_SIZE'] = '725x855';
 
     // CONTENT
-    $conf['SITE_NAME']         = utf8_encode ('NowOnItune');
-    $conf['PAGE_TITLE']        = utf8_encode ('Now on iTune.');
+    $conf['SITE_NAME']         = utf8_encode ('NowOnItunes');
+    $conf['PAGE_TITLE']        = utf8_encode ('Now on iTunes.');
     $conf['PAGE_DESCRIPTION']  = utf8_encode ('');
     $conf['PAGE_KEYWORDS']     = utf8_encode ('');
 
