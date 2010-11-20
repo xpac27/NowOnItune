@@ -9,7 +9,7 @@
             <a href="#{band_homepage}"><img src="#{MEDIA_PATH}band/725x855/#{band_id}.jpg"/></a>
         </div>
 
-        <div class="permalink"><strong>permalink:</strong> <a href="#{band_homepage}">#{band_homepage}</a></div>
+        <div class="permalink"><strong>permalink:</strong> <a href="#{band_id}">#{ROOT_PATH}#{band_id}</a></div>
 
         <div class="share">
             <div class="twitter">
