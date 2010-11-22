@@ -29,6 +29,9 @@
     $conf['AUTH_USER']     = '';
     $conf['AUTH_PASSWORD'] = '';
 
+    // EMAIL
+    $conf['ADMIN_EMAIL'] = 'someone@something.com';
+
     // IMAGES
     $conf['BAND_IMAGE_SIZE'] = '725x0';
 

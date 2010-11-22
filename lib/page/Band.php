@@ -35,6 +35,7 @@ class Page_Band extends Page
             Globals::$tpl->assignVar(array
             (
                 'band_id'          => $band->getId(),
+                'band_extendedId'  => $band->getExtendedId(),
                 'band_name'        => $band->getName(),
                 'band_homepage'    => $band->getHomepage(),
                 'band_url'         => $band->getURL(),
@@ -42,6 +43,7 @@ class Page_Band extends Page
             ));
 
             Globals::$tpl->assignSection('online');
+            Globals::$tpl->assignSection('report');
         }
     }
 }

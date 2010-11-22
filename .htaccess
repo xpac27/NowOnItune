@@ -16,7 +16,7 @@ RewriteRule ^(.*)  http://www.nowonitunes.com/$1 [L,R]
 RewriteRule ^/?$ index.php?page=homepage [L]
 
 # REMOTE
-RewriteRule ^remote/([a-zA-Z0-9_\/]+)$ index.php?remote=$1 [L]
+RewriteRule ^remote/([a-zA-Z0-9_\/]+)$ index.php?remote=$1 [QSA,L]
 
 # TOP
 RewriteRule ^top$ index.php?page=top [L]

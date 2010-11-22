@@ -4,6 +4,9 @@
                 <a href="http://we.GetTheShitDone.com" target="_blank">we.GetTheShitDone.com</a>
             </p>
             <p class="left">
+                <!-- SECTION report -->
+                <a href="#{ROOT_PATH}remote/report?id=#{band_extendedId}">report this page</a><br/>
+                <!-- END report -->
                 This site is not affiliated with Apple.<br/>
                 It's an original way to promote your iTunes account.<br/>
                 iTunes is a registered trademark of <a href="http://www.apple.com/" target="_blank">Apple, Inc</a>.<br/>
