@@ -352,16 +352,16 @@ class Tool
         {
             case 'JPG':
             case 'PEG':
-                imageJpeg($dest_img, $dest, 100);
+                imageJpeg($dest_img, $dest, 90);
                 break;
             case 'GIF':
-                imageGif($dest_img, $dest, 100);
+                imageGif($dest_img, $dest, 90);
                 break;
             case 'PNG':
-                imagePng($dest_img, $dest, 100);
+                imagePng($dest_img, $dest, 90);
                 break;
             case 'BMP':
-                imageWBmp($dest_img, $dest, 100);
+                imageWBmp($dest_img, $dest, 90);
                 break;
         }
 
