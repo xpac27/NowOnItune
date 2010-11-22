@@ -9,7 +9,7 @@ class Model_Band
         if (preg_match('/^([a-zA-Z0-9]+)$/', $id) != 0)
         {
             $this->data = $data;
-            $this->data['id'] = is_string($id) ? base_convert(strval($id), 36, 10) : $id;
+            $this->data['id'] = (is_string($id) ? base_convert(strval($id), 36, 10) : $id);
         }
         else
         {
@@ -22,6 +22,7 @@ class Model_Band
         $rs = DB::select
         ('
             SELECT
+                `id`,
                 `name`,
                 `homepage`,
                 `creation_date`,
@@ -60,12 +61,14 @@ class Model_Band
         ');
     }
 
+    public function getExtendedId()   { return base_convert(strval($this->getId()), 10, 36); }
     public function getId()           { return $this->getData('id'); }
     public function getName()         { return $this->getData('name'); }
     public function getHomepage()     { return $this->getData('homepage'); }
     public function getCreationDate() { return $this->getData('creation_date'); }
     public function getViewDate()     { return $this->getData('view_date'); }
     public function getViewCount()    { return $this->getData('view_count'); }
+    public function getURL()          { return Conf::get('ROOT_PATH') . $this->getExtendedId(); }
 
 }
 

@@ -12,6 +12,12 @@ class Page_Band extends Page
 
     public function configureData()
     {
+        if (!Conf::get('ONLINE'))
+        {
+            header('Location: ' . ROOT_PATH);
+            exit();
+        }
+
         // Configure top block
         $top = new Block_Top();
         $top->configure();
@@ -21,9 +27,11 @@ class Page_Band extends Page
 
         Globals::$tpl->assignVar(array
         (
-            'band_id'       => $band->getId(),
-            'band_name'     => $band->getName(),
-            'band_homepage' => $band->getHomepage(),
+            'band_id'          => $band->getId(),
+            'band_name'        => $band->getName(),
+            'band_homepage'    => $band->getHomepage(),
+            'band_url'         => $band->getURL(),
+            'band_url_encoded' => urlencode($band->getURL()),
         ));
     }
 }
