@@ -6,7 +6,13 @@ class Remote_Submit extends Remote
 
     public function configureData()
     {
-        if (!Tool::isOk($_POST['captcha']) || !Tool::isOk($_POST['band_name']) || !isset($_FILES) || !Tool::isOk($_FILES['band_cover']) || $_FILES['band_cover']['error'] == 4)
+        if (!Tool::isOk($_POST['terms']))
+        {
+            $_SESSION['feedback'] = 'You must agree with our therms of use';
+            header('Location: ' . Conf::get('ROOT_PATH'));
+            exit();
+        }
+        else if (!Tool::isOk($_POST['captcha']) || !Tool::isOk($_POST['band_name']) || !isset($_FILES) || !Tool::isOk($_FILES['band_cover']) || $_FILES['band_cover']['error'] == 4)
         {
             $_SESSION['feedback'] = 'You must complet the "brand\'s name" and the "brand\'s cover" field and fill the captcha !';
             header('Location: ' . Conf::get('ROOT_PATH'));

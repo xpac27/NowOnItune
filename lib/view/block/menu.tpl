@@ -1,5 +1,5 @@
 
-        <div id="top">
+        <div id="menu">
             <ul class="menu">
                 <li class="home">
                     <a href="#{ROOT_PATH}">NowOnItune</a>

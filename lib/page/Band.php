@@ -5,7 +5,7 @@ class Page_Band extends Page
     public function configureView()
     {
         Globals::$tpl->assignTemplate('lib/view/header.tpl');
-        Globals::$tpl->assignTemplate('lib/view/block/top.tpl');
+        Globals::$tpl->assignTemplate('lib/view/block/menu.tpl');
         Globals::$tpl->assignTemplate('lib/view/band.tpl');
         Globals::$tpl->assignTemplate('lib/view/footer.tpl');
     }
@@ -18,9 +18,9 @@ class Page_Band extends Page
             exit();
         }
 
-        // Configure top block
-        $top = new Block_Top();
-        $top->configure();
+        // Configure top menu
+        $menu = new Block_Menu();
+        $menu->configure();
 
         $band = new Model_Band($_GET['id']);
         $band->updateView();

@@ -1,12 +1,12 @@
 <?php
 
-class Page_Random extends Page
+class Page_Terms extends Page
 {
     public function configureView()
     {
         Globals::$tpl->assignTemplate('lib/view/header.tpl');
         Globals::$tpl->assignTemplate('lib/view/block/menu.tpl');
-        Globals::$tpl->assignTemplate('lib/view/random.tpl');
+        Globals::$tpl->assignTemplate('lib/view/terms.tpl');
         Globals::$tpl->assignTemplate('lib/view/footer.tpl');
     }
 
@@ -17,5 +17,4 @@ class Page_Random extends Page
         $menu->configure();
     }
 }
-
 

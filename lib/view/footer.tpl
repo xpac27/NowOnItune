@@ -4,12 +4,16 @@
                 <a href="http://we.GetTheShitDone.com" target="_blank">we.GetTheShitDone.com</a>
             </p>
             <p class="left">
+                This site is not affiliated with Apple.<br/>
+                It's an original way to promote your iTunes account.<br/>
                 iTunes is a registered trademark of <a href="http://www.apple.com/" target="_blank">Apple, Inc</a>.<br/>
-                <!--<a href="#{ROOT_PATH}terms">Terms of use</a>-->
+                <a href="#{ROOT_PATH}terms">Terms of use</a>
             </p>
         </div>
 
     </div>
+
+    <script type="text/javascript">Cufon.now();</script>
 
     <script type="text/javascript">
         var _gaq = _gaq || [];

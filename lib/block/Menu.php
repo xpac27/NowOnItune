@@ -1,6 +1,6 @@
 <?php
 
-class Block_Top extends Block
+class Block_Menu extends Block
 {
     public function configure()
     {

@@ -17,6 +17,10 @@
     <!-- END dev_script_list -->
 
     <link rel="stylesheet" type="text/css" href="#{ROOT_PATH}css/stylesheets/main.css?#{VERSION}">
+    <script type="text/javascript">
+        Cufon.replace('.cufon_normal', {'fontWeight' : 'normal'});
+        Cufon.replace('.cufon_bold', {'fontWeight' : 'bold'});
+    </script>
 </head>
 <body>
 

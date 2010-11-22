@@ -24,6 +24,10 @@
                 <p class="notice_2">iTunes account URL recommended</p>
             </div>
 
+            <div class="terms">
+                <input type="checkbox" value="1" name="terms" />I certify that my submission does not violate the <a href="#{ROOT_PATH}terms">terms of use</a>.
+            </div>
+
             <div class="captcha">
                 <span>Are you human ? <img src="#{ROOT_PATH}remote/captcha" /></span> <input class="captcha" type="text" value="" name="captcha" />
             </div>

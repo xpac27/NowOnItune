@@ -1,8 +1,8 @@
 
     <div class="page" id="wait">
 
-        <h1>Today will be just another day.</h1>
-        <h2>That your fans will never forget.</h2>
+        <h1 class="cufon_bold">Today will be just another day.</h1>
+        <h2 class="cufon_normal">That your fans will never forget.</h2>
 
     </div>
 

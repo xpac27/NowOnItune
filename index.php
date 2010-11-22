@@ -153,6 +153,10 @@
                 $page = new Page_Wait();
                 break;
 
+            case 'terms':
+                $page = new Page_Terms();
+                break;
+
             default :
                 $page = new Page();
         }
