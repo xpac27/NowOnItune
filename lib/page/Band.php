@@ -24,7 +24,7 @@ class Page_Band extends Page
 
         $band = new Model_Band($_GET['id']);
 
-        if (!$band->getSatus())
+        if (!$band->getStatus())
         {
             Globals::$tpl->assignSection('offline');
         }

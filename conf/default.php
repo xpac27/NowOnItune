@@ -33,11 +33,13 @@
     $conf['ADMIN_EMAIL'] = 'someone@something.com';
 
     // IMAGES
-    $conf['BAND_IMAGE_SIZE'] = '725x0';
+    $conf['BAND_IMAGE_SIZE']   = '725x0';
+    $conf['BAND_PREVIEW_SIZE'] = '120x120';
 
     // CONTENT
     $conf['SITE_NAME']         = utf8_encode ('NowOnItunes');
     $conf['PAGE_TITLE']        = utf8_encode ('Now on iTunes.');
     $conf['PAGE_DESCRIPTION']  = utf8_encode ('Create your own announcement of your presence on iTunes. Like The Beatles, create your own ad campaign and share it with the world! Perfect for Bands, Artists, App Developers, and a lot more...');
     $conf['PAGE_KEYWORDS']     = utf8_encode ('');
+    $conf['BANDS_PER_PAGE']    = 12;
 

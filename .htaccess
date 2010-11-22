@@ -30,6 +30,9 @@ RewriteRule ^latest$ index.php?page=latest [L]
 # TERMS
 RewriteRule ^terms$ index.php?page=terms [L]
 
+# ADMIN
+RewriteRule ^admin/([a-zA-Z0-9_]+)/?([0-9]*)$ index.php?page=admin_$1&p=$2 [QSA,L]
+
 # BAND
 RewriteRule ^([a-zA-Z0-9]+)$ index.php?page=band&id=$1 [L]
 

@@ -3,14 +3,21 @@
 class Page
 {
     protected $params;
+    protected $requireAuth = false;
 
     public function Page()
     {
+        if ($this->requireAuth)
+        {
+            Tool::requireAuth();
+        }
+
         $this->gatherParameterFromRequest();
 
         if (Conf::get('PROD'))
         {
-            Globals::$tpl->assignSection('prod_environement');
+            $this->addScript('_prod/lib.js');
+            $this->addScript('_prod/base.js');
         }
         else
         {
@@ -47,10 +54,7 @@ class Page
             }
             foreach ($files as $file)
             {
-                Globals::$tpl->assignLoopVar('dev_script_list', array
-                (
-                    'file' => 'js/' . $file,
-                ));
+                $this->addScript($file);
             }
         }
     }
@@ -64,6 +68,22 @@ class Page
         }
     }
 
+    protected function addScript($file)
+    {
+        Globals::$tpl->assignLoopVar('script_list', array
+        (
+            'file' => $file,
+        ));
+    }
+
+    protected function addStyle($file)
+    {
+        Globals::$tpl->assignLoopVar('style_list', array
+        (
+            'file' => $file,
+        ));
+    }
+
     protected function getParameter($name)
     {
         if (array_key_exists($name, $this->params))
@@ -75,11 +95,11 @@ class Page
 
     protected function getPage()
     {
-        if ($this->getParameter('p') !== false)
+        if ($this->getParameter('p'))
         {
             return $this->getParameter('p');
         }
-        return 0;
+        return 1;
     }
 
     public function configureView(){}

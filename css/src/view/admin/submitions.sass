@@ -1,0 +1,65 @@
+@import compass/css3
+@import conf
+
+#admin_submitions
+    h2
+        margin-bottom: 50px
+
+    .bands
+        .band
+            padding: 5px
+            height: 120px
+            margin: 20px 0 0 0
+            border: solid 1px $light_grey
+            +border-radius($border_radius_normal)
+
+        .status
+            float: right
+
+            li
+                margin: 0 0 5px 0
+
+                label
+                    background: $very_light_yellow
+                    border: solid 1px $light_yellow
+                    +border-radius($border_radius_normal)
+                    width: 80px
+                    padding: 8px 0
+                    display: block
+                    cursor: pointer
+
+                    input
+                        margin: 0 5px 0 5px
+
+
+        .preview
+            float: left
+            margin: 0 10px 0 0
+
+        .name
+            font-size: $font_normal
+            font-weight: bold
+
+        .info
+            li
+                margin: 5px 0 0 0
+
+                span
+                    font-weight: bold
+
+    .pagination
+        margin: 50px 0 0 0
+        height: 30px
+        text-align: center
+
+        li
+            display: inline
+
+            a
+                padding: 5px 5px
+
+        li.on
+            a
+                font-weight: bold
+                color: $black
+
