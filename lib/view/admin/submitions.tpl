@@ -11,7 +11,9 @@
                     <li><label><input type="checkbox" value="#{bands.online_checked}" onchange="javascript:Admin.band_changeStatus(this, #{bands.id})" />online</label></li>
                     <li><label><input type="checkbox" value="#{bands.official_checked}" onchange="javascript:Admin.band_changeOfficialStatus(this, #{bands.id})" />official</label></li>
                 </ul>
-                <img class="preview" src="#{MEDIA_PATH}band/120x120/#{bands.id}.jpg">
+                <div class="preview">
+                    <img src="#{MEDIA_PATH}band/120x120/#{bands.id}.jpg">
+                </div>
                 <div class="name"><a href="#{bands.url}">#{bands.name}</a></div>
                 <ul class="info">
                     <li><span>id:</span>  #{bands.id}</li>
