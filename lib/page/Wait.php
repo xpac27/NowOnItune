@@ -6,6 +6,7 @@ class Page_Wait extends Page
     {
         Globals::$tpl->assignTemplate('lib/view/header.tpl');
         Globals::$tpl->assignTemplate('lib/view/menu.tpl');
+        Globals::$tpl->assignTemplate('lib/view/wait.tpl');
         Globals::$tpl->assignTemplate('lib/view/footer.tpl');
     }
 
