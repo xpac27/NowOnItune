@@ -60,7 +60,7 @@ class Remote_Submit extends Remote
 
             move_uploaded_file($_FILES['band_cover']['tmp_name'], $original);
 
-            Tool::redimage($original, Conf::get('MEDIA_DIR') . 'band/' . Conf::get('BAND_IMAGE_SIZE') . '/' . $id . '.jpg', $previewSize[0], (isset ($previewSize[1])) ? $previewSize[1] : false, true);
+            Tool::redimage($original, Conf::get('MEDIA_DIR') . 'band/' . Conf::get('BAND_PREVIEW_SIZE') . '/' . $id . '.jpg', $previewSize[0], (isset ($previewSize[1])) ? $previewSize[1] : false, true);
             Tool::redimage($original, Conf::get('MEDIA_DIR') . 'band/' . Conf::get('BAND_IMAGE_SIZE') . '/' . $id . '.jpg', $destinationSize[0], (isset ($destinationSize[1])) ? $destinationSize[1] : false, true);
         }
         else
