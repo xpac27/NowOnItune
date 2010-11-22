@@ -8,25 +8,25 @@ class Remote_Submit extends Remote
     {
         if (!Tool::isOk($_POST['terms']))
         {
-            $_SESSION['feedback'] = 'You must agree with our therms of use';
+            $_SESSION['warning'] = 'You must agree with our therms of use';
             header('Location: ' . Conf::get('ROOT_PATH'));
             exit();
         }
         else if (!Tool::isOk($_POST['captcha']) || !Tool::isOk($_POST['band_name']) || !Tool::isOk($_POST['band_email']) || !Tool::isOk($_FILES['band_cover']) || !isset($_FILES) || $_FILES['band_cover']['error'] == 4)
         {
-            $_SESSION['feedback'] = 'You must complet the "brand\'s name", the "brand\'s cover" and email field and fill the captcha !';
+            $_SESSION['warning'] = 'You must complet the "brand\'s name", the "brand\'s cover" and email field and fill the captcha !';
             header('Location: ' . Conf::get('ROOT_PATH'));
             exit();
         }
         else if (preg_match('/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i', $_POST['band_email']) == 0)
         {
-            $_SESSION['feedback'] = 'Invalid email address !';
+            $_SESSION['warning'] = 'Invalid email address !';
             header('Location: ' . Conf::get('ROOT_PATH'));
             exit();
         }
         else if ($_SESSION['captcha'] != $_POST['captcha'])
         {
-            $_SESSION['feedback'] = 'Invalid information !';
+            $_SESSION['warning'] = 'Invalid information !';
             header('Location: ' . Conf::get('ROOT_PATH'));
             exit();
         }

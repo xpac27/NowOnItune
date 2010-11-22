@@ -27,10 +27,13 @@
             </ul>
         </div>
 
-        <!-- SECTION feedback -->
-        <p class="message feedback">#{feedback}</p>
-        <!-- END feedback -->
+        <div id="messages">
+            <!-- SECTION feedback -->
+            <p class="feedback">#{feedback}</p>
+            <!-- END feedback -->
 
-        <!-- SECTION warning -->
-        <p class="message warning">#{warning}</p>
-        <!-- END warning -->
+            <!-- SECTION warning -->
+            <p class="warning">#{warning}</p>
+            <!-- END warning -->
+        </div>
+

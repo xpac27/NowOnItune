@@ -5,10 +5,6 @@
         <h2 class="cufon_normal">Today is just another day.</h2>
         <h2 class="cufon_normal">That your fans will never forget.</h2>
 
-        <!-- SECTION form_error -->
-        <p class="error">You must complet the "brand's name" and the "brand's cover" field !</p>
-        <!-- END form_error -->
-
         <form method="post" action="#{ROOT_PATH}remote/submit" enctype="multipart/form-data">
             <div>
                 <label><span class="cufon_normal">Band</span><input type="text" value="" name="band_name" /></label>
