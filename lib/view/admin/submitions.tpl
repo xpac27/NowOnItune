@@ -4,6 +4,8 @@
         <h1 class="cufon_bold">Latest submitions.</h1>
         <h2 class="cufon_normal">#{bands_total_online} online bands (#{bands_total} total).</h2>
 
+        <!-- INCLUDE lib/view/pagination.tpl -->
+
         <ul class="bands">
             <!-- LOOP bands -->
             <li class="band">
