@@ -23,16 +23,26 @@ class Page_Band extends Page
         $menu->configure();
 
         $band = new Model_Band($_GET['id']);
-        $band->updateView();
 
-        Globals::$tpl->assignVar(array
-        (
-            'band_id'          => $band->getId(),
-            'band_name'        => $band->getName(),
-            'band_homepage'    => $band->getHomepage(),
-            'band_url'         => $band->getURL(),
-            'band_url_encoded' => urlencode($band->getURL()),
-        ));
+        if (!$band->getSatus())
+        {
+            Globals::$tpl->assignSection('offline');
+        }
+        else
+        {
+            $band->updateView();
+
+            Globals::$tpl->assignVar(array
+            (
+                'band_id'          => $band->getId(),
+                'band_name'        => $band->getName(),
+                'band_homepage'    => $band->getHomepage(),
+                'band_url'         => $band->getURL(),
+                'band_url_encoded' => urlencode($band->getURL()),
+            ));
+
+            Globals::$tpl->assignSection('online');
+        }
     }
 }
 

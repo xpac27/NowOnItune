@@ -1,6 +1,6 @@
 window.onload = function ()
 {
-    if ($('band'))
+    if ($('band') && bandOnline)
     {
         setTimeout(function()
         {
@@ -31,4 +31,6 @@ window.onload = function ()
         }, 6000);
     }
 };
+
+var bandOnline = false;
 

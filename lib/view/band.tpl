@@ -1,6 +1,7 @@
 
     <div class="page" id="band">
 
+        <!-- SECTION online -->
         <div id="band_mask"></div>
 
         <h1 class="cufon_bold"><span id="band_name">#{band_name}.</span> <span id="band_now">Now on iTunes.</span></h1>
@@ -19,6 +20,13 @@
                 <iframe src="http://www.facebook.com/plugins/like.php?href=#{band_url_encoded}&amp;layout=button_count&amp;show_faces=true&amp;width=450&amp;action=like&amp;colorscheme=light&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:21px;" allowTransparency="true"></iframe>
             </div>
         </div>
+        <script type="text/javascript">bandOnline = true;</script>
+        <!-- END online -->
+
+        <!-- SECTION offline -->
+        <h1 class="cufon_bold">Oops.</h1>
+        <h2 class="cufon_normal">This page has been removed due to a breach of the Terms of Use.</h2>
+        <!-- END offline -->
 
     </div>
 

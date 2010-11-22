@@ -23,6 +23,7 @@ class Model_Band
         ('
             SELECT
                 `id`,
+                `status`,
                 `name`,
                 `homepage`,
                 `creation_date`,
@@ -63,6 +64,7 @@ class Model_Band
 
     public function getExtendedId()   { return base_convert(strval($this->getId()), 10, 36); }
     public function getId()           { return $this->getData('id'); }
+    public function getSatus()        { return $this->getData('status'); }
     public function getName()         { return $this->getData('name'); }
     public function getHomepage()     { return $this->getData('homepage'); }
     public function getCreationDate() { return $this->getData('creation_date'); }
