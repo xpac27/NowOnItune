@@ -1,12 +1,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
 <head>
+    <title>#{PAGE_TITLE}</title>
+
+    <meta name="description" content="#{PAGE_DESCRIPTION}" />
+
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    
+
     <link rel="icon" type="image/x-icon" href="#{ROOT_PATH}favicon.ico" />
     <link rel="shortcut icon" type="image/x-icon" href="#{ROOT_PATH}favicon.ico" />
-    
-    <title>#{PAGE_TITLE}</title>
 
     <script language="javascript" type="text/javascript">var ROOT_PATH = '#{ROOT_PATH}';</script>
 

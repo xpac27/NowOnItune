@@ -12,9 +12,15 @@ class Remote_Submit extends Remote
             header('Location: ' . Conf::get('ROOT_PATH'));
             exit();
         }
-        else if (!Tool::isOk($_POST['captcha']) || !Tool::isOk($_POST['band_name']) || !isset($_FILES) || !Tool::isOk($_FILES['band_cover']) || $_FILES['band_cover']['error'] == 4)
+        else if (!Tool::isOk($_POST['captcha']) || !Tool::isOk($_POST['band_name']) || !Tool::isOk($_POST['band_email']) || !Tool::isOk($_FILES['band_cover']) || !isset($_FILES) || $_FILES['band_cover']['error'] == 4)
         {
-            $_SESSION['feedback'] = 'You must complet the "brand\'s name" and the "brand\'s cover" field and fill the captcha !';
+            $_SESSION['feedback'] = 'You must complet the "brand\'s name", the "brand\'s cover" and email field and fill the captcha !';
+            header('Location: ' . Conf::get('ROOT_PATH'));
+            exit();
+        }
+        else if (preg_match('/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i', $_POST['band_email']) == 0)
+        {
+            $_SESSION['feedback'] = 'Invalid email address !';
             header('Location: ' . Conf::get('ROOT_PATH'));
             exit();
         }
@@ -25,7 +31,7 @@ class Remote_Submit extends Remote
             exit();
         }
 
-        $size      = filesize($_FILES['band_cover']['tmp_name']);
+        $size      = getimagesize($_FILES['band_cover']['tmp_name']);
         $stat      = stat($_FILES['band_cover']['tmp_name']);
         $extention = strtolower(preg_replace('#.+\.([a-zA-Z]+)$#isU', '$1', $_FILES['band_cover']['name']));
 
@@ -36,6 +42,7 @@ class Remote_Submit extends Remote
                 INSERT INTO `band`
                 SET
                     `name` = "' . $_POST['band_name'] . '",
+                    `email` = "' . $_POST['band_email'] . '",
                     `homepage` = "' . $_POST['band_homepage'] . '",
                     `creation_date` = "' . time() . '",
                     `view_date` = "' . time() . '"
