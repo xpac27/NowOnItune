@@ -1,23 +1,27 @@
 window.onload = function ()
 {
-    if ($('band') && bandOnline)
+};
+
+function startBandAnimation()
+{
+    if ($('band'))
     {
         setTimeout(function()
         {
             Animation.animateElement($('band_cover'), 'opacity', 0, 1, 1000);
-        }, 1000);
-        setTimeout(function()
-        {
-            Animation.animateElement($('band_name'), 'opacity', 0, 1, 1000);
         }, 2000);
         setTimeout(function()
         {
+            Animation.animateElement($('band_name'), 'opacity', 0, 1, 1000);
+        }, 3000);
+        setTimeout(function()
+        {
             Animation.animateElement($('band_now'), 'opacity', 0, 1, 1000);
-        }, 3500);
+        }, 4500);
         setTimeout(function()
         {
             Animation.animateElement($('band_mask'), 'opacity', 1, 0, 500);
-        }, 5500);
+        }, 6500);
         setTimeout(function()
         {
             $('band_mask').remove();
@@ -28,9 +32,7 @@ window.onload = function ()
                     'visibility' : 'visible'
                 });
             });
-        }, 6000);
+        }, 7000);
     }
-};
-
-var bandOnline = false;
+}
 

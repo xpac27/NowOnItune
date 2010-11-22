@@ -20,7 +20,6 @@
                 <iframe src="http://www.facebook.com/plugins/like.php?href=#{band_url_encoded}&amp;layout=button_count&amp;show_faces=true&amp;width=450&amp;action=like&amp;colorscheme=light&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:21px;" allowTransparency="true"></iframe>
             </div>
         </div>
-        <script type="text/javascript">bandOnline = true;</script>
         <!-- END online -->
 
         <!-- SECTION offline -->
@@ -29,4 +28,8 @@
         <!-- END offline -->
 
     </div>
+
+    <!-- SECTION online -->
+    <script type="text/javascript">startBandAnimation();</script>
+    <!-- END online -->
 
