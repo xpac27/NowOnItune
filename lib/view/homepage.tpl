@@ -22,6 +22,7 @@
 
             <div>
                 <label><span class="cufon_normal">Email</span><input type="text" value="" name="band_email" /></label>
+                <p class="notice_2">Your address will never be sold to anyone.</p>
             </div>
 
             <div class="terms">
