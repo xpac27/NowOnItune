@@ -10,8 +10,8 @@
             <!-- LOOP bands -->
             <li class="band">
                 <ul class="status">
-                    <li><label><input type="checkbox" value="#{bands.online_checked}" onchange="javascript:Admin.band_changeStatus(this, #{bands.id})" />online</label></li>
-                    <li><label><input type="checkbox" value="#{bands.official_checked}" onchange="javascript:Admin.band_changeOfficialStatus(this, #{bands.id})" />official</label></li>
+                    <li><label><input type="checkbox" value="1" #{bands.online_checked} onchange="javascript:Admin.band_changeStatus(this, #{bands.id})" />online</label></li>
+                    <li><label><input type="checkbox" value="#1" {bands.official_checked} onchange="javascript:Admin.band_changeOfficialStatus(this, #{bands.id})" />official</label></li>
                 </ul>
                 <div class="preview">
                     <img src="#{MEDIA_PATH}band/120x120/#{bands.id}.jpg">
