@@ -67,7 +67,7 @@ class Model_Category
         {
             if (!isset($this->bands[($key + $from)]))
             {
-                $this->bands[($key + $from)] = new Model_Band($band['id'], $band);
+                $this->bands[($key + $from)] = new Model_Band($band['id'], $band, true);
             }
             $bands[] = $this->bands[($key + $from)];
         }

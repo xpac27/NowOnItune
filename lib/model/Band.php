@@ -4,9 +4,9 @@ class Model_Band
 {
     protected $data;
 
-    public function Model_Band($id, $data = array())
+    public function Model_Band($id, $data = array(), $fromId)
     {
-        if (is_numeric($id))
+        if ($fromId)
         {
             $this->data = $data;
             $this->data['id'] = $id;
