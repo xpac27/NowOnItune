@@ -24,7 +24,12 @@ class Page_Band extends Page
 
         $band = new Model_Band($_GET['id']);
 
-        if (!$band->getStatus())
+        if (!$band->exists())
+        {
+            header('Location: ' . Conf::get('ROOT_PATH'));
+            exit();
+        }
+        else if (!$band->getStatus())
         {
             Globals::$tpl->assignSection('offline');
         }
@@ -44,6 +49,8 @@ class Page_Band extends Page
 
             Globals::$tpl->assignSection('online');
             Globals::$tpl->assignSection('report');
+
+            Globals::$tpl->assignVar ('PAGE_TITLE', $band->getName() . ' - ' . Conf::get('PAGE_TITLE'));
         }
     }
 }

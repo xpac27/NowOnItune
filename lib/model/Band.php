@@ -4,7 +4,7 @@ class Model_Band
 {
     protected $data;
 
-    public function Model_Band($id, $data = array(), $fromId)
+    public function Model_Band($id, $data = array(), $fromId = false)
     {
         if ($fromId)
         {
@@ -34,16 +34,31 @@ class Model_Band
         {
             // TODO : Error 500
         }
-        $this->data = $rs['data'][0];
+        else
+        {
+            $this->data = $rs['data'][0];
+        }
     }
 
-    private function getData($name)
+    private function getData($name = false)
     {
         if (!$this->data || count($this->data) == 0 || !isset($this->data[$name]))
         {
             $this->fetchData();
         }
-        return $this->data[$name];
+        if ($name)
+        {
+            return $this->data[$name];
+        }
+        else
+        {
+            return $this->data;
+        }
+    }
+
+    public function exists()
+    {
+        return count($this->getData()) == 1 ? false : true;
     }
 
     public function updateView()
