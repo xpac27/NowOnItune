@@ -36,3 +36,13 @@ function startBandAnimation()
     }
 }
 
+function report(id)
+{
+    var message = prompt('Please, explain your report:');
+
+    if (!message.blank())
+    {
+        window.location = ROOT_PATH + 'remote/report?id=' + id + '&message=' + escape(message);
+    }
+}
+

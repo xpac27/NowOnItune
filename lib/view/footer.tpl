@@ -5,7 +5,7 @@
             </p>
             <p class="left">
                 <!-- SECTION report -->
-                <a href="#{ROOT_PATH}remote/report?id=#{band_extendedId}">report this page</a><br/>
+                <a href="javascript:report('#{band_extendedId}')">report this page</a><br/>
                 <!-- END report -->
                 This site is not affiliated with Apple.<br/>
                 It's an original way to promote your iTunes account.<br/>
