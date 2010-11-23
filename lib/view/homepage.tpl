@@ -20,11 +20,6 @@
                 <p class="notice_2">iTunes account URL recommended</p>
             </div>
 
-            <div>
-                <label><span class="cufon_normal">Email</span><input type="text" value="" name="band_email" /></label>
-                <p class="notice_2">Your address will never be sold to anyone.</p>
-            </div>
-
             <div class="terms">
                 <input type="checkbox" value="1" name="terms" />I certify that my submission does not violate the <a href="#{ROOT_PATH}terms">terms of use</a>.
             </div>

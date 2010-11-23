@@ -12,15 +12,9 @@ class Remote_Submit extends Remote
             header('Location: ' . Conf::get('ROOT_PATH'));
             exit();
         }
-        else if (!Tool::isOk($_POST['captcha']) || !Tool::isOk($_POST['band_name']) || !Tool::isOk($_POST['band_email']) || !Tool::isOk($_FILES['band_cover']) || !isset($_FILES) || $_FILES['band_cover']['error'] == 4)
+        else if (!Tool::isOk($_POST['captcha']) || !Tool::isOk($_POST['band_name']) || !Tool::isOk($_FILES['band_cover']) || !isset($_FILES) || $_FILES['band_cover']['error'] == 4)
         {
             $_SESSION['warning'] = 'You must complet the "brand\'s name", the "brand\'s cover" and email field and fill the captcha !';
-            header('Location: ' . Conf::get('ROOT_PATH'));
-            exit();
-        }
-        else if (preg_match('/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i', $_POST['band_email']) == 0)
-        {
-            $_SESSION['warning'] = 'Invalid email address !';
             header('Location: ' . Conf::get('ROOT_PATH'));
             exit();
         }
@@ -30,6 +24,23 @@ class Remote_Submit extends Remote
             header('Location: ' . Conf::get('ROOT_PATH'));
             exit();
         }
+
+        if ($_SESSION['count_submition'] >= 4)
+        {
+            if ($_SESSION['latest_submition'] > time() - 60*60)
+            {
+                $_SESSION['warning'] = 'You\'re amazingly fast! You\'ll have to come back in one hour to post.';
+                header('Location: ' . Conf::get('ROOT_PATH'));
+                exit();
+            }
+            else
+            {
+                $_SESSION['count_submition'] = 0;
+            }
+        }
+
+        $_SESSION['count_submition'] = ($_SESSION['count_submition']) ? $_SESSION['count_submition'] + 1 : 1;
+        $_SESSION['latest_submition'] = time();
 
         $size      = getimagesize($_FILES['band_cover']['tmp_name']);
         $stat      = stat($_FILES['band_cover']['tmp_name']);
@@ -42,9 +53,9 @@ class Remote_Submit extends Remote
                 INSERT INTO `band`
                 SET
                     `name` = "' . $_POST['band_name'] . '",
-                    `email` = "' . $_POST['band_email'] . '",
                     `homepage` = "' . $_POST['band_homepage'] . '",
                     `creation_date` = "' . time() . '",
+                    `ip` = "' . $_SERVER['REMOTE_ADDR'] . '",
                     `view_date` = "' . time() . '"
             ');
 
