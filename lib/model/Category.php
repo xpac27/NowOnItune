@@ -5,6 +5,7 @@ class Model_Category
     protected $bands;
     protected $bands_data;
     protected $bands_online_data;
+    protected $bands_online_rand_data;
     protected $bands_total;
     protected $bands_total_online;
 
@@ -33,6 +34,18 @@ class Model_Category
             ORDER BY b.id DESC
         ');
         $this->bands_online_data = $rs['data'];
+    }
+
+    private function fetchBandsOnlineRandom()
+    {
+        $rs = DB::select
+        ('
+            SELECT b.*
+            FROM `band` AS `b`
+            WHERE `status` = "1"
+            ORDER BY RAND()
+        ');
+        $this->bands_online_rand_data = $rs['data'];
     }
 
     private function fetchBandsTotal()
@@ -78,11 +91,11 @@ class Model_Category
 
         foreach (array_slice($this->bands_data, $from, $max) as $key => $band)
         {
-            if (!isset($this->bands[($key + $from)]))
+            if (!isset($this->bands[$band['id']]))
             {
-                $this->bands[($key + $from)] = new Model_Band($band['id'], $band, true);
+                $this->bands[$band['id']] = new Model_Band($band['id'], $band, true);
             }
-            $bands[] = $this->bands[($key + $from)];
+            $bands[] = $this->bands[$band['id']];
         }
         return $bands;
     }
@@ -100,11 +113,32 @@ class Model_Category
 
         foreach (array_slice($this->bands_online_data, $from, $max) as $key => $band)
         {
-            if (!isset($this->bands[($key + $from)]))
+            if (!isset($this->bands[$band['id']]))
             {
-                $this->bands[($key + $from)] = new Model_Band($band['id'], $band, true);
+                $this->bands[$band['id']] = new Model_Band($band['id'], $band, true);
             }
-            $bands[] = $this->bands[($key + $from)];
+            $bands[] = $this->bands[$band['id']];
+        }
+        return $bands;
+    }
+
+    public function getBandsOnlineRandom($max = false)
+    {
+        if (!isset($this->bands_online_rand_data))
+        {
+            $this->fetchBandsOnlineRandom();
+        }
+
+        $max   = $max ? $max : Conf::get('BANDS_PER_PAGE');
+        $bands = array();
+
+        foreach (array_slice($this->bands_online_rand_data, 0, $max) as $key => $band)
+        {
+            if (!isset($this->bands[$band['id']]))
+            {
+                $this->bands[$band['id']] = new Model_Band($band['id'], $band, true);
+            }
+            $bands[] = $this->bands[$band['id']];
         }
         return $bands;
     }
