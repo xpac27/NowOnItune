@@ -134,7 +134,10 @@
 
         static function close()
         {
-            mysql_close(self::$CON);
+            if (self::$CON)
+            {
+                mysql_close(self::$CON);
+            }
         }
 
         static function getTotalQueryTime()
