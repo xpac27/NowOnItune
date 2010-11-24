@@ -1,5 +1,5 @@
 
-    <div class="page" id="band">
+    <div class="page block" id="band">
 
         <!-- SECTION online -->
         <div id="band_mask"></div>

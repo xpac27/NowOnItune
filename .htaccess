@@ -25,7 +25,7 @@ RewriteRule ^top$ index.php?page=top [L]
 RewriteRule ^random$ index.php?page=random [L]
 
 # LATEST
-RewriteRule ^latest$ index.php?page=latest [L]
+RewriteRule ^latest/?([0-9]*)$ index.php?page=latest&p=$1 [L]
 
 # TERMS
 RewriteRule ^terms$ index.php?page=terms [L]

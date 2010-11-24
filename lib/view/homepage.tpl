@@ -1,5 +1,5 @@
 
-    <div class="page" id="homepage">
+    <div class="page block" id="homepage">
 
         <h1 class="cufon_bold">Now on iTunes.</h1>
         <h2 class="cufon_normal">Today is just another day.</h2>
