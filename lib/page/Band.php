@@ -42,7 +42,7 @@ class Page_Band extends Page
                 'band_id'          => $band->getId(),
                 'band_extendedId'  => $band->getExtendedId(),
                 'band_name'        => $band->getName(),
-                'band_homepage'    => $band->getHomepage(),
+                'band_homepage'    => (preg_match('#^https?+://[A-Za-z0-9-_]+\.[A-Za-z0-9-_%&\?\/.=]+$#i', $band->getHomepage()) ? $band->getHomepage() : Conf::get('ROOT_PATH')),
                 'band_url'         => $band->getURL(),
                 'band_url_encoded' => urlencode($band->getURL()),
             ));
