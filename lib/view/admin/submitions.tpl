@@ -1,5 +1,5 @@
 
-    <div class="page" id="admin_submitions">
+    <div class="page block" id="admin_submitions">
 
         <h1 class="cufon_bold">Latest submitions.</h1>
         <h2 class="cufon_normal">#{bands_total_online} online bands (#{bands_total} total).</h2>
