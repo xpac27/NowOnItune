@@ -1,5 +1,5 @@
 
-    <div class="page" id="terms">
+    <div class="page block" id="terms">
 
         <h1 class="cufon_bold">Terms of use.</h1>
 
