@@ -25,7 +25,7 @@ class Remote_Submit extends Remote
             exit();
         }
 
-        if ($_SESSION['count_submition'] >= 4)
+        if ($_SESSION['count_submition'] >= Conf::get('MAX_SUBMITIONS_PER_HOURS'))
         {
             if ($_SESSION['latest_submition'] > time() - 60*60)
             {
