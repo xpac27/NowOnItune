@@ -22,10 +22,7 @@
                 }
                 self::$memcached->add($key, $object, Conf::get('MEMCACHED_DURATION'));
             }
-            else
-            {
-                self::$local[$key] = $object;
-            }
+            self::$local[$key] = $object;
         }
 
         static function get($key)

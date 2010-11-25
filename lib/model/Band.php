@@ -12,7 +12,7 @@ class Model_Band
         }
         $this->id = $id;
 
-        if (!$this->getData('band_' . $this->id))
+        if (!$this->getData('band_' . $this->id) && count($data) != 0)
         {
             $this->setData('band_' . $this->id, $data);
         }
