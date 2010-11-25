@@ -3,7 +3,7 @@
     class Template
     {
         // store the list of all tpl files name and cache time
-        var $TEMPLATE, $SECTION, $LOOP, $VARIABLE,    $CONTENT, $SIZE, $LATEST_INCLUDE, $LOOP_SIZE;
+        var $TEMPLATE, $SECTION, $LOOP, $VARIABLE, $CONTENT, $SIZE, $LATEST_INCLUDE, $LOOP_SIZE;
 
         // CONF (could be changed from outside)
         var $cacheFolder, $cacheTimeCoef, $renderCompress, $execTime, $cacheKeyList;
@@ -210,9 +210,23 @@
 
         // compute all templates
         function display ($return = false){
+            if (!$this->CONTENT)
+            {
+                $this->compute();
+            }
+
+            if ($return){
+                return $this->CONTENT;
+            }else{
+                echo $this->CONTENT;
+            }
+        }
+
+        function compute()
+        {
             //print_r($this->SIZE);
             //print_r($this->LOOP);
-            $this->execTime = (float) array_sum (explode (' ', microtime ()));
+            $this->execTime = microtime(true);
 
             $this->SIZE = array ();
 
@@ -246,13 +260,7 @@
                 }
             }
 
-            $this->execTime = (float) array_sum (explode (' ', microtime ())) - $this->execTime;
-
-            if ($return){
-                return $this->CONTENT;
-            }else{
-                echo $this->CONTENT;
-            }
+            $this->execTime = microtime(true) - $this->execTime;
         }
 
         // save or update a tpl's cache file

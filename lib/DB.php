@@ -3,14 +3,9 @@
     class DB
     {
         // class variables
-        static $CON, $execTime, $queryTime, $nbReq;
-
-        // Construct
-        static function mysqlDatabase()
-        {
-            self::$execTime = 0;
-            self::$nbReq = 0;
-        }
+        static $CON            = null;
+        static $totalQueryTime = 0;
+        static $totalQuery     = 0;
 
         static function connect()
         {
@@ -36,7 +31,7 @@
                 self::select_db();
             }
 
-            self::$nbReq ++;
+            self::$totalQuery ++;
 
             return mysql_query($query, self::$CON);
         }
@@ -45,12 +40,11 @@
         {
             if (preg_match("/^\\s*(select)/i", $query))
             {
-                self::$queryTime = (float) array_sum(explode(' ', microtime()));
+                $queryTime = microtime(true);
 
                 $rs = self::query($query);
 
-                self::$queryTime = (float) array_sum(explode(' ', microtime())) - self::$queryTime;
-                self::$execTime += self::$queryTime;
+                self::$totalQueryTime += microtime(true) - $queryTime;
 
                 if ($rs)
                 {
@@ -142,7 +136,7 @@
 
         static function getTotalQueryTime()
         {
-            return self::$queryTime;
+            return self::$totalQueryTime;
         }
     }
 

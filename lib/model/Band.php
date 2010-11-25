@@ -2,63 +2,57 @@
 
 class Model_Band
 {
-    protected $data;
+    private $id = null;
 
     public function Model_Band($id, $data = array(), $fromId = false)
     {
-        if ($fromId)
+        if (!$fromId)
         {
-            $this->data = $data;
-            $this->data['id'] = $id;
+            $id = (is_string($id) ? base_convert(strval($id), 36, 10) : $id);
         }
-        else if (preg_match('/^([a-zA-Z0-9]+)$/', $id) != 0)
+        $this->id = $id;
+
+        if (!$this->getData('band_' . $this->id))
         {
-            $this->data = $data;
-            $this->data['id'] = (is_string($id) ? base_convert(strval($id), 36, 10) : $id);
-        }
-        else
-        {
-            // TODO : Error 500
+            $this->setData('band_' . $this->id, $data);
         }
     }
 
-    private function fetchData()
+    private function getData($name)
     {
-        $rs = DB::select
-        ('
-            SELECT *
-            FROM `band`
-            WHERE `id`="' . $this->data['id'] . '"
-        ');
-        if ($rs['total'] == 0)
-        {
-            // TODO : Error 500
-        }
-        else
-        {
-            $this->data = $rs['data'][0];
-        }
+        return Cache::get('Model_Band::' . $name);
     }
 
-    private function getData($name = false)
+    private function setData($name, $value)
     {
-        if (!$this->data || count($this->data) == 0 || !isset($this->data[$name]))
+        Cache::set('Model_Band::' . $name, $value);
+    }
+
+    private function fetchData($key = false)
+    {
+        if (!$data = $this->getData('band_' . $this->id))
         {
-            $this->fetchData();
+            $rs = DB::select
+            ('
+                SELECT *
+                FROM `band`
+                WHERE `id`="' . $this->id . '"
+            ');
+            if ($rs['total'] == 0)
+            {
+                // TODO : Error 500
+            }
+            else
+            {
+                $this->setData('band_' . $this->id, $data = $rs['data'][0]);
+            }
         }
-        if ($name)
-        {
-            return $this->data[$name];
-        }
-        else
-        {
-            return $this->data;
-        }
+        return $key ? $data[$key] : $data;
     }
 
     public function exists()
     {
-        return count($this->getData()) == 1 ? false : true;
+        return count($this->fetchData()) == 1 ? false : true;
     }
 
     public function updateView()
@@ -70,21 +64,21 @@ class Model_Band
                 `view_count` = `view_count` + 1,
                 `view_date` = "' . time() . '"
 
-            WHERE `id` = "' . $this->data['id'] . '"
+            WHERE `id` = "' . $this->id . '"
         ');
     }
 
     public function getExtendedId()     { return base_convert(strval($this->getId()), 10, 36); }
-    public function getId()             { return $this->getData('id'); }
-    public function getStatus()         { return $this->getData('status'); }
-    public function getPublicStatus()   { return $this->getData('public'); }
-    public function getOfficialStatus() { return $this->getData('official'); }
-    public function getName()           { return $this->getData('name'); }
-    public function getHomepage()       { return $this->getData('homepage'); }
-    public function getCreationDate()   { return $this->getData('creation_date'); }
-    public function getViewDate()       { return $this->getData('view_date'); }
-    public function getViewCount()      { return $this->getData('view_count'); }
-    public function getEmail()          { return $this->getData('email'); }
+    public function getId()             { return $this->fetchData('id'); }
+    public function getStatus()         { return $this->fetchData('status'); }
+    public function getPublicStatus()   { return $this->fetchData('public'); }
+    public function getOfficialStatus() { return $this->fetchData('official'); }
+    public function getName()           { return $this->fetchData('name'); }
+    public function getHomepage()       { return $this->fetchData('homepage'); }
+    public function getCreationDate()   { return $this->fetchData('creation_date'); }
+    public function getViewDate()       { return $this->fetchData('view_date'); }
+    public function getViewCount()      { return $this->fetchData('view_count'); }
+    public function getEmail()          { return $this->fetchData('email'); }
     public function getURL()            { return Conf::get('ROOT_PATH') . $this->getExtendedId(); }
 
 }

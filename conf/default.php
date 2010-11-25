@@ -18,7 +18,9 @@
     $conf['DB_READONLY'] = false;
 
     // CACHE
-    $conf['CACHE_TIMECOEF'] = 0;
+    $conf['CACHE_TIMECOEF']     = 0;
+    $conf['MEMCACHED_ENABLED']  = false;
+    $conf['MEMCACHED_DURATION'] = 60 * 5;
 
     // ENV
     $conf['PROD'] = false;
