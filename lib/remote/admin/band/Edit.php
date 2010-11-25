@@ -18,6 +18,11 @@ class Remote_Admin_Band_Edit extends Remote
             {
                 DB::update('UPDATE `band` SET `official`="' . $_POST['officialStatus'] . '" WHERE `id`="' . $_POST['id'] . '"');
             }
+
+            if (isset($_POST['publicStatus']))
+            {
+                DB::update('UPDATE `band` SET `public`="' . $_POST['publicStatus'] . '" WHERE `id`="' . $_POST['id'] . '"');
+            }
         }
     }
 }

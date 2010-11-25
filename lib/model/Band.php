@@ -77,6 +77,7 @@ class Model_Band
     public function getExtendedId()     { return base_convert(strval($this->getId()), 10, 36); }
     public function getId()             { return $this->getData('id'); }
     public function getStatus()         { return $this->getData('status'); }
+    public function getPublicStatus()   { return $this->getData('public'); }
     public function getOfficialStatus() { return $this->getData('official'); }
     public function getName()           { return $this->getData('name'); }
     public function getHomepage()       { return $this->getData('homepage'); }

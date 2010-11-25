@@ -41,6 +41,7 @@ class Page_Admin_Submitions extends Page
                 'email'            => $band->getEmail(),
                 'url'              => $band->getURL(),
                 'online_checked'   => $band->getStatus() ? 'checked="checked"' : '',
+                'public_checked'   => $band->getPublicStatus() ? 'checked="checked"' : '',
                 'official_checked' => $band->getOfficialStatus() ? 'checked="checked"' : '',
             ));
         }

@@ -31,6 +31,7 @@ class Model_Category
             SELECT b.*
             FROM `band` AS `b`
             WHERE `status` = "1"
+            AND `public` = "1"
             ORDER BY b.id DESC
         ');
         $this->bands_online_data = $rs['data'];
@@ -43,6 +44,7 @@ class Model_Category
             SELECT b.*
             FROM `band` AS `b`
             WHERE `status` = "1"
+            AND `public` = "1"
             ORDER BY RAND()
         ');
         $this->bands_online_rand_data = $rs['data'];

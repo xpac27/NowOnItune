@@ -29,5 +29,19 @@ var Admin =
         });
     },
 
+    band_changePublicStatus : function(input, id)
+    {
+        var param =
+        {
+            'publicStatus' : input.checked ? 1 : 0,
+            'id'           : id
+        };
+
+        new Ajax.Request(ROOT_PATH + 'remote/admin/band/edit',
+        {
+            parameters: $H(param).toQueryString()
+        });
+    }
+
 };
 
