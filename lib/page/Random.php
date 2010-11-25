@@ -30,6 +30,11 @@ class Page_Random extends Page
                 'pair'       => ($key % 2) ? 'pair' : 'odd',
             ));
         }
+
+        Globals::$tpl->assignVar(array
+        (
+            'refresh_frequency' => round(Conf::get('MEMCACHED_DURATION') / 60),
+        ));
     }
 }
 
