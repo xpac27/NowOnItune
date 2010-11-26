@@ -8,7 +8,7 @@ class Remote_Submit extends Remote
     {
         if (!Tool::isOk($_POST['terms']))
         {
-            $_SESSION['warning'] = 'You must agree with our therms of use';
+            $_SESSION['warning'] = 'You must agree with our terms of use';
             header('Location: ' . Conf::get('ROOT_PATH'));
             exit();
         }
