@@ -25,9 +25,12 @@ class Remote_Submit extends Remote
             exit();
         }
 
+        $_SESSION['count_submition'] = isset($_SESSION['count_submition']) ? $_SESSION['count_submition'] + 1 : 1;
+        $_SESSION['latest_submition'] = time();
+
         if ($_SESSION['count_submition'] >= Conf::get('MAX_SUBMITIONS_PER_HOURS'))
         {
-            if ($_SESSION['latest_submition'] > time() - 60*60)
+            if ($_SESSION['latest_submition'] > time() - 3600)
             {
                 $_SESSION['warning'] = 'You\'re amazingly fast! You\'ll have to come back in one hour to post.';
                 header('Location: ' . Conf::get('ROOT_PATH'));
@@ -39,14 +42,11 @@ class Remote_Submit extends Remote
             }
         }
 
-        $_SESSION['count_submition'] = ($_SESSION['count_submition']) ? $_SESSION['count_submition'] + 1 : 1;
-        $_SESSION['latest_submition'] = time();
-
         $size      = getimagesize($_FILES['band_cover']['tmp_name']);
         $stat      = stat($_FILES['band_cover']['tmp_name']);
         $extention = strtolower(preg_replace('#.+\.([a-zA-Z]+)$#isU', '$1', $_FILES['band_cover']['name']));
 
-        if ($size[0] <= 1680 && $size[1] <= 1680 && $stat['size'] <= 450 * 1024)
+        if ($size[0] <= 1680 && $size[1] <= 1680 && $stat['size'] <= 460800 ) // 450 * 1024 = 460800
         {
             $id = DB::insert
             ('
