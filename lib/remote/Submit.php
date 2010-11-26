@@ -25,6 +25,9 @@ class Remote_Submit extends Remote
             exit();
         }
 
+        $_SESSION['count_submition'] = isset($_SESSION['count_submition']) ? $_SESSION['count_submition'] + 1 : 1;
+        $_SESSION['latest_submition'] = time();
+
         if ($_SESSION['count_submition'] >= Conf::get('MAX_SUBMITIONS_PER_HOURS'))
         {
             if ($_SESSION['latest_submition'] > time() - 60*60)
@@ -38,9 +41,6 @@ class Remote_Submit extends Remote
                 $_SESSION['count_submition'] = 0;
             }
         }
-
-        $_SESSION['count_submition'] = ($_SESSION['count_submition']) ? $_SESSION['count_submition'] + 1 : 1;
-        $_SESSION['latest_submition'] = time();
 
         $size      = getimagesize($_FILES['band_cover']['tmp_name']);
         $stat      = stat($_FILES['band_cover']['tmp_name']);
