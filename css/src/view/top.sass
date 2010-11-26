@@ -1,7 +1,67 @@
 #top
-    height: 500px
-    background: image-url("wait.jpg")
-    background-color: #fff
-    background-repeat: no-repeat
-    background-position: center 200px
+    h1
+        margin-top: 10px
+
+    .band
+        margin: 20px 0 0 0
+        float: left
+        width: 438px
+        padding: 20px
+        position: relative
+
+        .preview
+            float: left
+            width: 120px
+            height: 120px
+            margin: 0 20px 0 0
+
+        .name
+            a
+                font-size: 22px
+                color: $black
+
+        .info
+            position: absolute
+            bottom: 20px
+            left: 160px
+
+            li
+                margin: 10px 0 0 0
+                padding: 0 0 0 25px
+                background-repeat: no-repeat
+                background-position: left center
+
+            .view_count
+                background-image: image-url('icon_views.png')
+            .permalink
+                background-image: image-url('icon_permalink.png')
+
+    .odd
+        margin-right: 20px
+
+    .bottom
+        margin: 20px 0 0 0
+        text-align: center
+
+        .reload
+            font-size: $font_medium
+            color: $grey
+
+            img
+                margin: 0 0 -8px 0
+
+    .pagination
+        height: 15px
+        text-align: center
+
+        li
+            display: inline
+
+            a
+                padding: 5px 5px
+
+        li.on
+            a
+                font-weight: bold
+                color: $black
 

@@ -80,6 +80,23 @@ class Model_Category
         return $data;
     }
 
+    private function fetchBandsTop()
+    {
+        if (!$data = $this->getData('bands_top_data'))
+        {
+            $rs = DB::select
+            ('
+                SELECT b.*
+                FROM `band` AS `b`
+                WHERE `status` = "1"
+                AND `public` = "1"
+                ORDER BY b.view_count DESC
+            ');
+            $this->setData('bands_top_data', $data = $rs['data']);
+        }
+        return $data;
+    }
+
     private function fetchBandsTotal()
     {
         if (!$data = $this->getData('bands_total'))
@@ -149,6 +166,14 @@ class Model_Category
         $max = $max ? $max : Conf::get('BANDS_PER_PAGE');
 
         return $this->getBandsFromData($this->fetchBandsOnlineRandom(), 0, $max);
+    }
+
+    public function getBandsTop($page = false)
+    {
+        $from  = ((!$page) ? 0 : $page - 1) * Conf::get('BANDS_PER_PAGE');
+        $max   = Conf::get('BANDS_PER_PAGE');
+
+        return $this->getBandsFromData($this->fetchBandsTop(), $from, $max);
     }
 
     public function setNoCache($value = true) { $this->noCache = $value; }
