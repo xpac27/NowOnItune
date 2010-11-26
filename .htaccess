@@ -19,7 +19,7 @@ RewriteRule ^/?$ index.php?page=homepage [L]
 RewriteRule ^remote/([a-zA-Z0-9_\/]+)$ index.php?remote=$1 [QSA,L]
 
 # TOP
-RewriteRule ^top$ index.php?page=top [L]
+RewriteRule ^top/?([0-9]*)$ index.php?page=top&p=$1 [L]
 
 # RANDOM
 RewriteRule ^random$ index.php?page=random [L]
