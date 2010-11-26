@@ -15,7 +15,7 @@
                     <li><label><input type="checkbox" value="#1" #{bands.official_checked} onchange="javascript:Admin.band_changeOfficialStatus(this, #{bands.id})" />official</label></li>
                 </ul>
                 <div class="preview">
-                    <img src="#{MEDIA_PATH}band/120x120/#{bands.id}.jpg">
+                    <img width="120" height="120" src="#{MEDIA_PATH}band/120x120/#{bands.id}.jpg">
                 </div>
                 <div class="name"><a href="#{bands.url}">#{bands.name}</a></div>
                 <ul class="info">
