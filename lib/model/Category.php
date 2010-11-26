@@ -2,7 +2,13 @@
 
 class Model_Category
 {
-    protected $bands;
+    private $bands;
+    private $noCache = false;
+
+    static function deleteData($id)
+    {
+        // TODO
+    }
 
     public function Model_Category()
     {
@@ -10,12 +16,19 @@ class Model_Category
 
     private function getData($name)
     {
-        return Cache::get('Model_Category::' . $name);
+        if (!$this->noCache)
+        {
+            return Cache::get('Model_Category::' . $name);
+        }
+        return false;
     }
 
     private function setData($name, $value)
     {
-        Cache::set('Model_Category::' . $name, $value);
+        if (!$this->noCache)
+        {
+            Cache::set('Model_Category::' . $name, $value);
+        }
     }
 
     private function fetchBands()
@@ -94,6 +107,10 @@ class Model_Category
         {
             if (!isset($this->bands[$band['id']]))
             {
+                if ($this->noCache)
+                {
+                    Model_Band::deleteData($band['id']);
+                }
                 $this->bands[$band['id']] = new Model_Band($band['id'], $band, true);
             }
             $bands[] = $this->bands[$band['id']];
@@ -133,6 +150,8 @@ class Model_Category
 
         return $this->getBandsFromData($this->fetchBandsOnlineRandom(), 0, $max);
     }
+
+    public function setNoCache($value = true) { $this->noCache = $value; }
 }
 
 

@@ -22,6 +22,7 @@ class Page_Admin_Submitions extends Page
         $menu->configure();
 
         $category = new Model_Category();
+        $category->setNoCache(true);
 
         Globals::$tpl->assignVar(array
         (

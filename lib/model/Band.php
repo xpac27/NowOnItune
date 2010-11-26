@@ -4,6 +4,11 @@ class Model_Band
 {
     private $id = null;
 
+    static function deleteData($id)
+    {
+        Cache::delete('Model_Band::band_' . $id);
+    }
+
     public function Model_Band($id, $data = array(), $fromId = false)
     {
         if (!$fromId)

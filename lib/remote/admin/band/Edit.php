@@ -23,6 +23,8 @@ class Remote_Admin_Band_Edit extends Remote
             {
                 DB::update('UPDATE `band` SET `public`="' . $_POST['publicStatus'] . '" WHERE `id`="' . $_POST['id'] . '"');
             }
+
+            Model_Band::deleteData($_POST['id']);
         }
     }
 }

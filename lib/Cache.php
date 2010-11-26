@@ -41,5 +41,18 @@
             }
             return false;
         }
+
+        static function delete($key)
+        {
+            if (Conf::get('MEMCACHED_ENABLED'))
+            {
+                if (!self::$memcached)
+                {
+                    self::connect();
+                }
+                self::$memcached->delete($key);
+            }
+            unset(self::$local[$key]);
+        }
     }
 
