@@ -16,6 +16,18 @@ class Page_Search extends Page
         $menu = new Block_Menu();
         $menu->configure();
 
+        if (strlen($this->getParameter('query')) < 3)
+        {
+            Globals::$tpl->assignSection('bad_query');
+        }
+        else
+        {
+            $this->search();
+        }
+    }
+
+    private function search()
+    {
         $search = new Model_Search($this->getParameter('query'));
 
         foreach ($search->get($this->getPage()) as $key => $band)
@@ -33,7 +45,8 @@ class Page_Search extends Page
 
         Globals::$tpl->assignVar(array
         (
-            'search_query' => htmlentities($search->getQuery()),
+            'search_query'         => htmlentities($search->getQuery()),
+            'search_total_results' => htmlentities($search->getTotalResult()),
         ));
 
         if ($search->getTotalResult() > Conf::get('BANDS_PER_PAGE'))
@@ -46,6 +59,15 @@ class Page_Search extends Page
             $pagination->setItemPerPage(Conf::get('BANDS_PER_PAGE'));
             $pagination->setTotalItem($search->getTotalResult());
             $pagination->compute();
+        }
+
+        if ($search->getTotalResult() == 0)
+        {
+            Globals::$tpl->assignSection('no_results');
+        }
+        else
+        {
+            Globals::$tpl->assignSection('search_results');
         }
     }
 }

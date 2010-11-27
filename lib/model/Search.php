@@ -38,7 +38,8 @@ class Model_Search
             ('
                 SELECT b.*
                 FROM `band` AS `b`
-                WHERE CONCAT_WS(" ", b.name, b.homepage) LIKE(\'' . Tool::getLikeList($this->query) . '\')
+                WHERE `status` = "1"
+                AND CONCAT_WS(" ", b.name, b.homepage) LIKE(\'' . Tool::getLikeList($this->query) . '\')
                 ORDER BY b.id DESC
             ');
             $this->setData($data = $rs['data']);
