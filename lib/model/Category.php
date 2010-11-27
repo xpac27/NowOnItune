@@ -111,7 +111,7 @@ class Model_Category
     {
         if (!$data = $this->getData('bands_total_online'))
         {
-            $rs = DB::select('SELECT COUNT(*) as total FROM `band` WHERE `status`="1"');
+            $rs = DB::select('SELECT COUNT(*) as total FROM `band` WHERE `status`="1" AND `public`="1"');
             $this->setData('bands_total_online', $data = $rs['data'][0]['total']);
         }
         return $data;
@@ -161,11 +161,12 @@ class Model_Category
         return $this->getBandsFromData($this->fetchBandsOnline(), $from, $max);
     }
 
-    public function getBandsOnlineRandom($max = false)
+    public function getBandsOnlineRandom($page = false)
     {
-        $max = $max ? $max : Conf::get('BANDS_PER_PAGE');
+        $from  = ((!$page) ? 0 : $page - 1) * Conf::get('BANDS_PER_PAGE');
+        $max   = Conf::get('BANDS_PER_PAGE');
 
-        return $this->getBandsFromData($this->fetchBandsOnlineRandom(), 0, $max);
+        return $this->getBandsFromData($this->fetchBandsOnlineRandom(), $from, $max);
     }
 
     public function getBandsTop($page = false)

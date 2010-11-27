@@ -41,12 +41,19 @@
 
     .bottom
         margin: 20px 0 0 0
+
+    .pagination
+        height: 15px
         text-align: center
 
-        .reload
-            font-size: $font_medium
-            color: $grey
+        li
+            display: inline
 
-            img
-                margin: 0 0 -8px 0
+            a
+                padding: 5px 5px
+
+        li.on
+            a
+                font-weight: bold
+                color: $black
 
