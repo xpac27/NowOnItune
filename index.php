@@ -149,6 +149,10 @@
                 $page = new Page_Random();
                 break;
 
+            case 'search':
+                $page = new Page_Search();
+                break;
+
             case 'wait':
                 $page = new Page_Wait();
                 break;

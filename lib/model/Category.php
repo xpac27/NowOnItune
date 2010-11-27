@@ -2,7 +2,7 @@
 
 class Model_Category
 {
-    private $bands;
+    private $bands   = array();
     private $noCache = false;
 
     static function deleteData($id)
