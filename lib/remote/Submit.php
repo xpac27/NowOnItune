@@ -81,7 +81,7 @@ class Remote_Submit extends Remote
             exit();
         }
 
-        header('Location: ' . Conf::get('ROOT_PATH'). base_convert(strval($id), 10, 36));
+        header('Location: ' . Conf::get('ROOT_PATH') . 'x' . base_convert(strval($id), 10, 36));
     }
 }
 

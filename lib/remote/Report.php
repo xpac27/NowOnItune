@@ -14,7 +14,9 @@ class Remote_Report extends Remote
                 $headers .= "content-type: text/html; charset=iso-8859-1\n";
                 $headers .= "From: ".Conf::get('SITE_NAME')." <".Conf::get('ADMIN_EMAIL').">\n";
 
-                $content = Conf::get('ROOT_PATH') . $_GET['id'] . ' (' . base_convert(strval($_GET['id']), 36, 10) . ')<br/><br/>' . $_GET['message'];
+                $band = new Model_Band($_GET['id'], true);
+
+                $content = Conf::get('ROOT_PATH') . $_GET['id'] . ' (' . $band->getURL() . ')<br/><br/>' . $_GET['message'];
 
                 mail (Conf::get('ADMIN_EMAIL'), Conf::get('SITE_NAME') . ' - new report', $content, $headers);
 

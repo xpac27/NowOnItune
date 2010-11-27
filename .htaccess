@@ -34,5 +34,6 @@ RewriteRule ^terms$ index.php?page=terms [L]
 RewriteRule ^admin/([a-zA-Z0-9_]+)/?([0-9]*)$ index.php?page=admin_$1&p=$2 [QSA,L]
 
 # BAND
+RewriteRule ^x([a-zA-Z0-9]{3,})$ index.php?page=band&id=$1 [L]
 RewriteRule ^([a-zA-Z0-9]+)$ index.php?page=band&id=$1 [L]
 
