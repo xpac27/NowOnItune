@@ -37,7 +37,7 @@ RewriteRule ^search/([^/]+)/?([0-9]*)$ index.php?page=search&query=$1&p=$2 [L]
 RewriteRule ^terms$ index.php?page=terms [L]
 
 # ADMIN
-RewriteRule ^admin/([a-zA-Z0-9_]+)/?([0-9]*)$ index.php?page=admin_$1&p=$2 [QSA,L]
+RewriteRule ^admin/([a-zA-Z0-9_]+)/?([a-zA-Z+]*)/?([0-9]*)$ index.php?page=admin_$1&filter=$2&p=$3 [QSA,L]
 
 # BAND
 RewriteRule ^x([a-zA-Z0-9]{3,})$ index.php?page=band&id=$1 [L]

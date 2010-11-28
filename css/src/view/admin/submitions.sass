@@ -5,6 +5,19 @@
     .bottom
         margin: 20px 0 0 0
 
+    .filters
+        text-align: center
+        margin: 20px 0 10px 0
+
+        label
+            color: $blue
+            background: $light_yellow
+            border: solid 1px $light_grey
+            +border-radius($border_radius_normal)
+            padding: 8px 6px 8px 2px
+            margin: 0 5px
+            cursor: pointer
+
     .bands_detailed
         .band
             padding: 5px
@@ -21,10 +34,11 @@
                 margin: 0 0 5px 0
 
                 label
-                    background: $very_light_yellow
-                    border: solid 1px $light_yellow
+                    color: $blue
+                    background: $light_yellow
+                    border: solid 1px $light_grey
                     +border-radius($border_radius_normal)
-                    width: 80px
+                    width: 70px
                     padding: 8px 0
                     display: block
                     cursor: pointer

@@ -84,11 +84,16 @@ class Page
         ));
     }
 
+    protected function hasParameter($name)
+    {
+        return array_key_exists($name, $this->params);
+    }
+
     protected function getParameter($name)
     {
-        if (array_key_exists($name, $this->params))
+        if ($this->hasParameter($name))
         {
-            return $this->params[$name];
+            return str_replace(' ', '+', $this->params[$name]);
         }
         return false;
     }

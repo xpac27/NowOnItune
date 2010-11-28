@@ -24,6 +24,36 @@ class Page_Admin_Submitions extends Page
         $category = new Model_Category();
         $category->setNoCache(true);
 
+        if ($this->hasParameter('filter'))
+        {
+            $filters = explode('+', $this->getParameter('filter'));
+            $bands   = $category->getBands
+            (
+                'latest',
+                $this->getPage(),
+                (in_array('online', $filters) ? 1 : null),
+                (in_array('public', $filters) ? 1 : null),
+                (in_array('official', $filters) ? 1 : null)
+            );
+            $bandsTotal = $category->getBandsTotal
+            (
+                (in_array('online', $filters) ? 1 : null),
+                (in_array('public', $filters) ? 1 : null),
+                (in_array('official', $filters) ? 1 : null)
+            );
+            Globals::$tpl->assignVar(array
+            (
+                'filter_online_checked'   => (in_array('online', $filters) ? 'checked="checked"' : ''),
+                'filter_public_checked'   => (in_array('public', $filters) ? 'checked="checked"' : ''),
+                'filter_official_checked' => (in_array('official', $filters) ? 'checked="checked"' : ''),
+            ));
+        }
+        else
+        {
+            $bands = $category->getBands();
+            $bandsTotal = $category->getBandsTotal();
+        }
+
         Globals::$tpl->assignVar(array
         (
             'bands_total'           => $category->getBandsTotal(),
@@ -32,7 +62,7 @@ class Page_Admin_Submitions extends Page
             'bands_total_officials' => $category->getBandsTotal(1, 1, 1),
         ));
 
-        foreach ($category->getBands('latest', $this->getPage()) as $band)
+        foreach ($bands as $band)
         {
             Globals::$tpl->assignLoopVar('bands', array
             (
@@ -49,12 +79,17 @@ class Page_Admin_Submitions extends Page
             ));
         }
 
-        $pagination = new Model_Pagination();
-        $pagination->setPage($this->getPage());
-        $pagination->setLink('admin/submitions');
-        $pagination->setItemPerPage(Conf::get('BANDS_PER_PAGE'));
-        $pagination->setTotalItem($category->getBandsTotal());
-        $pagination->compute();
+        if ($bandsTotal > Conf::get('BANDS_PER_PAGE'))
+        {
+            Globals::$tpl->assignSection('pagination');
+
+            $pagination = new Model_Pagination();
+            $pagination->setPage($this->getPage());
+            $pagination->setLink('admin/submitions' . ($this->hasParameter('filter') ? '/' . $this->getParameter('filter') : ''));
+            $pagination->setItemPerPage(Conf::get('BANDS_PER_PAGE'));
+            $pagination->setTotalItem($bandsTotal);
+            $pagination->compute();
+        }
     }
 }
 

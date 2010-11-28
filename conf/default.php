@@ -1,7 +1,7 @@
 <?php
 
     // VERSION
-    $conf['VERSION'] = 000002;
+    $conf['VERSION'] = 000003;
 
     // LOCATION
     $conf['ROOT_PATH']  = 'http://localhost/NowOnItunes/';

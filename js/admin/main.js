@@ -1,6 +1,8 @@
 var Admin =
 {
 
+    working : false,
+
     band_changeStatus : function(input, id)
     {
         var param =
@@ -41,6 +43,27 @@ var Admin =
         {
             parameters: $H(param).toQueryString()
         });
+    },
+
+    band_changeFilters : function()
+    {
+        if (Admin.working)
+        {
+            return;
+        }
+        Admin.working = true;
+
+        var filter = '';
+
+        $$('#admin_submitions .filters input').each(function(item)
+        {
+            if (item.checked)
+            {
+                filter = filter + ((filter == '') ? '' : '+') + item.readAttribute('name');
+            }
+        });
+
+        window.location = ROOT_PATH + 'admin/submitions' + ((filter == '') ? '' : '/' + filter);
     }
 
 };
