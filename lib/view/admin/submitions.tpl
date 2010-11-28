@@ -1,12 +1,12 @@
 
-    <div class="page block" id="admin_submitions">
+    <div class="page" id="admin_submitions">
 
-        <h1 class="cufon_bold">Latest submitions.</h1>
-        <h2 class="cufon_normal">#{bands_total_online} online bands, #{bands_total_public} publics, #{bands_total} total.</h2>
+        <div class="block">
+            <h1 class="cufon_bold">Latest submitions.</h1>
+            <h2 class="cufon_normal">#{bands_total_online} online bands (#{bands_total_public} publics, #{bands_total_officials} officials) of #{bands_total} total.</h2>
+        </div>
 
-        <!-- INCLUDE lib/view/pagination.tpl -->
-
-        <ul class="bands">
+        <ul class="bands_detailed">
             <!-- LOOP bands -->
             <li class="band">
                 <ul class="status">
@@ -29,7 +29,11 @@
             <!-- END bands -->
         </ul>
 
-        <!-- INCLUDE lib/view/pagination.tpl -->
+        <div class="clear"></div>
+
+        <div class="block bottom">
+            <!-- INCLUDE lib/view/pagination.tpl -->
+        </div>
 
     </div>
 
