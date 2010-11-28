@@ -31,88 +31,45 @@ class Model_Category
         }
     }
 
-    private function fetchBands()
+    private function fetchBands($filters = array(), $order = 'id DESC')
     {
-        if (!$data = $this->getData('bands_data'))
+        $key = md5(print_r($filters, true) . $order);
+
+        if (!$data = $this->getData('bands_data_' . $key))
         {
+            foreach ($filters as $filter => $value)
+            {
+                $where = (isset($where) ? $where . ' AND ' : 'WHERE ') . $filter . '="' . $value . '"';
+            }
             $rs = DB::select
             ('
                 SELECT b.*
                 FROM `band` AS `b`
-                ORDER BY b.id DESC
+                ' . (isset($where) ? $where : '') . '
+                ORDER BY ' . $order . '
             ');
-            $this->setData('bands_data', $data = $rs['data']);
+            $this->setData('bands_data_' . $key, $data = $rs['data']);
         }
         return $data;
     }
 
-    private function fetchBandsOnline()
+    private function fetchBandsTotal($filters = array())
     {
-        if (!$data = $this->getData('bands_online_data'))
+        $key = md5(print_r($filters, true));
+
+        if (!$data = $this->getData('bands_total_' . $key))
         {
+            foreach ($filters as $filter => $value)
+            {
+                $where = (isset($where) ? $where . ' AND ' : 'WHERE ') . $filter . '="' . $value . '"';
+            }
             $rs = DB::select
             ('
-                SELECT b.*
+                SELECT COUNT(*) as total
                 FROM `band` AS `b`
-                WHERE `status` = "1"
-                AND `public` = "1"
-                ORDER BY b.id DESC
+                ' . (isset($where) ? $where : '') . '
             ');
-            $this->setData('bands_online_data', $data = $rs['data']);
-        }
-        return $data;
-    }
-
-    private function fetchBandsOnlineRandom()
-    {
-        if (!$data = $this->getData('bands_online_rand_data'))
-        {
-            $rs = DB::select
-            ('
-                SELECT b.*
-                FROM `band` AS `b`
-                WHERE `status` = "1"
-                AND `public` = "1"
-                ORDER BY RAND()
-            ');
-            $this->setData('bands_online_rand_data', $data = $rs['data']);
-        }
-        return $data;
-    }
-
-    private function fetchBandsTop()
-    {
-        if (!$data = $this->getData('bands_top_data'))
-        {
-            $rs = DB::select
-            ('
-                SELECT b.*
-                FROM `band` AS `b`
-                WHERE `status` = "1"
-                AND `public` = "1"
-                ORDER BY b.view_count DESC
-            ');
-            $this->setData('bands_top_data', $data = $rs['data']);
-        }
-        return $data;
-    }
-
-    private function fetchBandsTotal()
-    {
-        if (!$data = $this->getData('bands_total'))
-        {
-            $rs = DB::select('SELECT COUNT(*) as total FROM `band`');
-            $this->setData('bands_total', $data = $rs['data'][0]['total']);
-        }
-        return $data;
-    }
-
-    private function fetchBandsTotalOnline()
-    {
-        if (!$data = $this->getData('bands_total_online'))
-        {
-            $rs = DB::select('SELECT COUNT(*) as total FROM `band` WHERE `status`="1"');
-            $this->setData('bands_total_online', $data = $rs['data'][0]['total']);
+            $this->setData('bands_total_' . $key, $data = $rs['data'][0]['total']);
         }
         return $data;
     }
@@ -135,45 +92,39 @@ class Model_Category
         return $bands;
     }
 
-    public function getBandsTotal()
+    public function getBandsTotal($status = null, $public = null, $official = null)
     {
-        return $this->fetchBandsTotal();
+        $filters = array();
+
+        if ($status !== null)   { $filters['b.status'] = $status; }
+        if ($public !== null)   { $filters['b.public'] = $public; }
+        if ($official !== null) { $filters['b.official'] = $official; }
+
+        return $this->fetchBandsTotal($filters);
     }
 
-    public function getBandsTotalOnline()
+    public function getBands($sort = 'latest', $page = null, $status = null, $public = null, $official = null)
     {
-        return $this->fetchBandsTotalOnline();
-    }
+        $order   = '';
+        $filters = array();
+        $from    = (($page === null) ? 0 : $page - 1) * Conf::get('BANDS_PER_PAGE');
+        $max     = Conf::get('BANDS_PER_PAGE');
 
-    public function getBands($page = false)
-    {
-        $from  = ((!$page) ? 0 : $page - 1) * Conf::get('BANDS_PER_PAGE');
-        $max   = Conf::get('BANDS_PER_PAGE');
+        if ($status !== null)   { $filters['b.status'] = $status; }
+        if ($public !== null)   { $filters['b.public'] = $public; }
+        if ($official !== null) { $filters['b.official'] = $official; }
 
-        return $this->getBandsFromData($this->fetchBands(), $from, $max);
-    }
+        switch ($sort)
+        {
+            case 'latest': $order = 'b.id DESC';
+                break;
+            case 'random': $order = 'RAND()';
+                break;
+            case 'top'   : $order = 'b.view_count DESC';
+                break;
+        }
 
-    public function getBandsOnline($page = false)
-    {
-        $from  = ((!$page) ? 0 : $page - 1) * Conf::get('BANDS_PER_PAGE');
-        $max   = Conf::get('BANDS_PER_PAGE');
-
-        return $this->getBandsFromData($this->fetchBandsOnline(), $from, $max);
-    }
-
-    public function getBandsOnlineRandom($max = false)
-    {
-        $max = $max ? $max : Conf::get('BANDS_PER_PAGE');
-
-        return $this->getBandsFromData($this->fetchBandsOnlineRandom(), 0, $max);
-    }
-
-    public function getBandsTop($page = false)
-    {
-        $from  = ((!$page) ? 0 : $page - 1) * Conf::get('BANDS_PER_PAGE');
-        $max   = Conf::get('BANDS_PER_PAGE');
-
-        return $this->getBandsFromData($this->fetchBandsTop(), $from, $max);
+        return $this->getBandsFromData($this->fetchBands($filters, $order), $from, $max);
     }
 
     public function setNoCache($value = true) { $this->noCache = $value; }

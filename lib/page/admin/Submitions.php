@@ -27,10 +27,11 @@ class Page_Admin_Submitions extends Page
         Globals::$tpl->assignVar(array
         (
             'bands_total'        => $category->getBandsTotal(),
-            'bands_total_online' => $category->getBandsTotalOnline(),
+            'bands_total_online' => $category->getBandsTotal(1),
+            'bands_total_public' => $category->getBandsTotal(1, 1),
         ));
 
-        foreach ($category->getBands($this->getPage()) as $band)
+        foreach ($category->getBands('latest', $this->getPage()) as $band)
         {
             Globals::$tpl->assignLoopVar('bands', array
             (

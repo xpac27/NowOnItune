@@ -30,7 +30,7 @@ class Page_Search extends Page
     {
         $search = new Model_Search($this->getParameter('query'));
 
-        foreach ($search->get($this->getPage()) as $key => $band)
+        foreach ($search->getBands($this->getPage(), 1, 1) as $key => $band)
         {
             Globals::$tpl->assignLoopVar('bands', array
             (
@@ -46,10 +46,10 @@ class Page_Search extends Page
         Globals::$tpl->assignVar(array
         (
             'search_query'         => htmlentities($search->getQuery()),
-            'search_total_results' => htmlentities($search->getTotalResult()),
+            'search_total_results' => htmlentities($search->getBandsTotal(1, 1)),
         ));
 
-        if ($search->getTotalResult() > Conf::get('BANDS_PER_PAGE'))
+        if ($search->getBandsTotal(1, 1) > Conf::get('BANDS_PER_PAGE'))
         {
             Globals::$tpl->assignSection('pagination');
 
@@ -57,11 +57,11 @@ class Page_Search extends Page
             $pagination->setPage($this->getPage());
             $pagination->setLink('search/' . urlencode($search->getQuery()));
             $pagination->setItemPerPage(Conf::get('BANDS_PER_PAGE'));
-            $pagination->setTotalItem($search->getTotalResult());
+            $pagination->setTotalItem($search->getBandsTotal(1, 1));
             $pagination->compute();
         }
 
-        if ($search->getTotalResult() == 0)
+        if ($search->getBandsTotal(1, 1) == 0)
         {
             Globals::$tpl->assignSection('no_results');
         }

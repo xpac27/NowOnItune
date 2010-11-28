@@ -18,7 +18,7 @@ class Page_Random extends Page
 
         $category = new Model_Category();
 
-        foreach ($category->getBandsOnlineRandom() as $key => $band)
+        foreach ($category->getBands('random', 1, 1) as $key => $band)
         {
             Globals::$tpl->assignLoopVar('bands', array
             (

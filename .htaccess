@@ -27,6 +27,9 @@ RewriteRule ^random$ index.php?page=random [L]
 # LATEST
 RewriteRule ^latest/?([0-9]*)$ index.php?page=latest&p=$1 [L]
 
+# OFFICIAL
+RewriteRule ^official/?([0-9]*)$ index.php?page=official&p=$1 [L]
+
 # SEARCH
 RewriteRule ^search/([^/]+)/?([0-9]*)$ index.php?page=search&query=$1&p=$2 [L]
 

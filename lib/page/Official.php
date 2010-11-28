@@ -1,12 +1,12 @@
 <?php
 
-class Page_Latest extends Page
+class Page_Official extends Page
 {
     public function configureView()
     {
         Globals::$tpl->assignTemplate('lib/view/header.tpl');
         Globals::$tpl->assignTemplate('lib/view/block/menu.tpl');
-        Globals::$tpl->assignTemplate('lib/view/latest.tpl');
+        Globals::$tpl->assignTemplate('lib/view/official.tpl');
         Globals::$tpl->assignTemplate('lib/view/footer.tpl');
     }
 
@@ -18,7 +18,7 @@ class Page_Latest extends Page
 
         $category = new Model_Category();
 
-        foreach ($category->getBands('latest', $this->getPage(), 1, 1) as $key => $band)
+        foreach ($category->getBands('latest', $this->getPage(), 1, 1, 1) as $key => $band)
         {
             Globals::$tpl->assignLoopVar('bands', array
             (
@@ -33,9 +33,9 @@ class Page_Latest extends Page
 
         $pagination = new Model_Pagination();
         $pagination->setPage($this->getPage());
-        $pagination->setLink('latest');
+        $pagination->setLink('official');
         $pagination->setItemPerPage(Conf::get('BANDS_PER_PAGE'));
-        $pagination->setTotalItem($category->getBandsTotal(1, 1));
+        $pagination->setTotalItem($category->getBandsTotal(1, 1, 1));
         $pagination->compute();
     }
 }

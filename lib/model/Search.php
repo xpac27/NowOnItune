@@ -13,36 +13,63 @@ class Model_Search
         $this->query_md5 = md5($query);
     }
 
-    private function getData()
+    private function getData($name)
     {
         if (!$this->noCache)
         {
-            return Cache::get('Model_Category::' . $this->query_md5);
+            return Cache::get('Model_Search::' . $name);
         }
         return false;
     }
 
-    private function setData($value)
+    private function setData($name, $value)
     {
         if (!$this->noCache)
         {
-            Cache::set('Model_Category::' . $this->query_md5, $value);
+            Cache::set('Model_Search::' . $name, $value);
         }
     }
 
-    private function fetchData()
+    private function fetchBands($filters = array())
     {
-        if (!$data = $this->getData())
+        $key = md5(print_r($filters, true));
+
+        if (!$data = $this->getData($this->query_md5 . '_' . $key))
         {
+            foreach ($filters as $filter => $value)
+            {
+                $where = (isset($where) ? $where . ' AND ' : ' AND ') . $filter . '="' . $value . '"';
+            }
             $rs = DB::select
             ('
                 SELECT b.*
                 FROM `band` AS `b`
-                WHERE `status` = "1"
-                AND CONCAT_WS(" ", b.name, b.homepage) LIKE(\'' . Tool::getLikeList($this->query) . '\')
-                ORDER BY b.id DESC
+                WHERE CONCAT_WS(" ", b.name, b.homepage) LIKE(\'' . Tool::getLikeList($this->query) . '\')
+                ' . (isset($where) ? $where : '') . '
             ');
-            $this->setData($data = $rs['data']);
+            $this->setData($this->query_md5 . '_' . $key, $data = $rs['data']);
+        }
+        return $data;
+    }
+
+    private function fetchBandsTotal($filters = array())
+    {
+        $key = md5(print_r($filters, true));
+
+        if (!$data = $this->getData($this->query_md5 . '_total_' . $key))
+        {
+            foreach ($filters as $filter => $value)
+            {
+                $where = (isset($where) ? $where . ' AND ' : ' AND ') . $filter . '="' . $value . '"';
+            }
+            $rs = DB::select
+            ('
+                SELECT COUNT(*) as total
+                FROM `band` AS `b`
+                WHERE CONCAT_WS(" ", b.name, b.homepage) LIKE(\'' . Tool::getLikeList($this->query) . '\')
+                ' . (isset($where) ? $where : '') . '
+            ');
+            $this->setData($this->query_md5 . '_total_', $data = $rs['data'][0]['total']);
         }
         return $data;
     }
@@ -65,17 +92,28 @@ class Model_Search
         return $bands;
     }
 
-    public function get($page = false)
+    public function getBands($page = false, $status = null, $public = null, $official = null)
     {
-        $from  = ((!$page) ? 0 : $page - 1) * Conf::get('BANDS_PER_PAGE');
-        $max   = Conf::get('BANDS_PER_PAGE');
+        $filters = array();
+        $from    = ((!$page) ? 0 : $page - 1) * Conf::get('BANDS_PER_PAGE');
+        $max     = Conf::get('BANDS_PER_PAGE');
 
-        return $this->getBandsFromData($this->fetchData(), $from, $max);
+        if ($status !== null)   { $filters['b.status'] = $status; }
+        if ($public !== null)   { $filters['b.public'] = $public; }
+        if ($official !== null) { $filters['b.official'] = $official; }
+
+        return $this->getBandsFromData($this->fetchBands($filters), $from, $max);
     }
 
-    public function getTotalResult()
+    public function getBandsTotal($status = null, $public = null, $official = null)
     {
-        return count($this->fetchData());
+        $filters = array();
+
+        if ($status !== null)   { $filters['b.status'] = $status; }
+        if ($public !== null)   { $filters['b.public'] = $public; }
+        if ($official !== null) { $filters['b.official'] = $official; }
+
+        return $this->fetchBandsTotal($filters);
     }
 
     public function getQuery() { return $this->query; }

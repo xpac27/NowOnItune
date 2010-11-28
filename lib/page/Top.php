@@ -18,7 +18,7 @@ class Page_Top extends Page
 
         $category = new Model_Category();
 
-        foreach ($category->getBandsTop($this->getPage()) as $key => $band)
+        foreach ($category->getBands('top', $this->getPage(), 1, 1) as $key => $band)
         {
             Globals::$tpl->assignLoopVar('bands', array
             (
@@ -35,7 +35,7 @@ class Page_Top extends Page
         $pagination->setPage($this->getPage());
         $pagination->setLink('top');
         $pagination->setItemPerPage(Conf::get('BANDS_PER_PAGE'));
-        $pagination->setTotalItem($category->getBandsTotalOnline());
+        $pagination->setTotalItem($category->getBandsTotal(1, 1));
         $pagination->compute();
     }
 }

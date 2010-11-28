@@ -149,6 +149,10 @@
                 $page = new Page_Random();
                 break;
 
+            case 'official':
+                $page = new Page_Official();
+                break;
+
             case 'search':
                 $page = new Page_Search();
                 break;

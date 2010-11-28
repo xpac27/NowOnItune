@@ -2,7 +2,7 @@
     <div class="page block" id="admin_submitions">
 
         <h1 class="cufon_bold">Latest submitions.</h1>
-        <h2 class="cufon_normal">#{bands_total_online} online bands (#{bands_total} total).</h2>
+        <h2 class="cufon_normal">#{bands_total_online} online bands, #{bands_total_public} publics, #{bands_total} total.</h2>
 
         <!-- INCLUDE lib/view/pagination.tpl -->
 
