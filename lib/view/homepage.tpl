@@ -7,7 +7,7 @@
 
         <form method="post" action="#{ROOT_PATH}remote/submit" enctype="multipart/form-data">
             <div>
-                <label><span class="cufon_normal">Band</span><input type="text" value="" name="band_name" /></label>
+                <label><span class="cufon_normal">Band</span><input type="text" value="#{band_name}" name="band_name" /></label>
             </div>
 
             <div>
@@ -16,7 +16,7 @@
             </div>
 
             <div>
-                <label><span class="cufon_normal">Website</span><input type="text" value="http://" name="band_homepage" /></label>
+                <label><span class="cufon_normal">Website</span><input type="text" value="#{band_homepage}" name="band_homepage" /></label>
                 <p class="notice_2">iTunes account URL recommended</p>
             </div>
 
