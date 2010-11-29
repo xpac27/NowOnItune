@@ -84,6 +84,7 @@ class Model_Band
     public function getViewDate()       { return $this->fetchData('view_date'); }
     public function getViewCount()      { return $this->fetchData('view_count'); }
     public function getEmail()          { return $this->fetchData('email'); }
+    public function getIP()             { return $this->fetchData('ip'); }
     public function getURL()            { return Conf::get('ROOT_PATH') . $this->getExtendedId(); }
 
 }

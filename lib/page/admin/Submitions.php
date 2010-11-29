@@ -40,6 +40,7 @@ class Page_Admin_Submitions extends Page
                 'creation_date'    => date('d/m/Y H:i', $band->getCreationDate()),
                 'view_count'       => $band->getViewCount(),
                 'email'            => $band->getEmail(),
+                'ip'               => $band->getIP(),
                 'url'              => $band->getURL(),
                 'online_checked'   => $band->getStatus() ? 'checked="checked"' : '',
                 'public_checked'   => $band->getPublicStatus() ? 'checked="checked"' : '',
