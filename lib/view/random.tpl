@@ -14,5 +14,9 @@
 
         <div class="clear"></div>
 
+        <div class="block bottom">
+            <!-- INCLUDE lib/view/pagination.tpl -->
+        </div>
+
     </div>
 

@@ -35,7 +35,15 @@ class Page_Band extends Page
         }
         else
         {
-            $band->updateView();
+            if (!isset($_SESSION['band_viewed']))
+            {
+                $_SESSION['band_viewed'] = array();
+            }
+            if (!in_array($band->getId(), $_SESSION['band_viewed']))
+            {
+                $_SESSION['band_viewed'][] = $band->getId();
+                $band->updateView();
+            }
 
             Globals::$tpl->assignVar(array
             (

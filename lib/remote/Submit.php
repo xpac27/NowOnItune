@@ -6,6 +6,8 @@ class Remote_Submit extends Remote
 
     public function configureData()
     {
+        Page_Homepage::setBandFormSessionData();
+
         if (!Tool::isOk($_POST['terms']))
         {
             $_SESSION['warning'] = 'You must agree with our terms of use';
@@ -74,10 +76,12 @@ class Remote_Submit extends Remote
 
             Tool::redimage($original, Conf::get('MEDIA_DIR') . 'band/' . Conf::get('BAND_PREVIEW_SIZE') . '/' . $id . '.jpg', $previewSize[0], (isset ($previewSize[1])) ? $previewSize[1] : false, true);
             Tool::redimage($original, Conf::get('MEDIA_DIR') . 'band/' . Conf::get('BAND_IMAGE_SIZE') . '/' . $id . '.jpg', $destinationSize[0], (isset ($destinationSize[1])) ? $destinationSize[1] : false, true);
+
+            Page_Homepage::unsetBandFormSessionData();
         }
         else
         {
-            $_SESSION['feedback'] = 'The file you sent is not valid ! JPG, PNG or GIF, 450KB 1680x1680px max';
+            $_SESSION['feedback'] = 'The file you sent is not valid! JPG, PNG or GIF, 450KB 1680x1680px max';
             header('Location: ' . Conf::get('ROOT_PATH'));
             exit();
         }

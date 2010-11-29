@@ -30,6 +30,7 @@
                     <li><span>email:</span>  #{bands.email}</li>
                     <li><span>views:</span>  #{bands.view_count}</li>
                     <li><span>creation:</span>  #{bands.creation_date}</li>
+                    <li><span>IP address:</span>  #{bands.ip}</li>
                 </ul>
             </li>
             <!-- END bands -->

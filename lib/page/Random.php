@@ -18,7 +18,7 @@ class Page_Random extends Page
 
         $category = new Model_Category();
 
-        foreach ($category->getBands('random', 1, 1) as $key => $band)
+        foreach ($category->getBands('random', $this->getPage(), 1, 1) as $key => $band)
         {
             Globals::$tpl->assignLoopVar('bands', array
             (
@@ -35,6 +35,13 @@ class Page_Random extends Page
         (
             'refresh_frequency' => round(Conf::get('MEMCACHED_DURATION') / 60),
         ));
+
+        $pagination = new Model_Pagination();
+        $pagination->setPage($this->getPage());
+        $pagination->setLink('random');
+        $pagination->setItemPerPage(Conf::get('BANDS_PER_PAGE'));
+        $pagination->setTotalItem($category->getBandsTotal(1, 1));
+        $pagination->compute();
     }
 }
 

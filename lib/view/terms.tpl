@@ -4,44 +4,54 @@
         <h1 class="cufon_bold">Terms of use.</h1>
 
         <div class="text">
-            <p>GetTheShitDone, Inc. (herin referred to as "we", "us", or "GetTheShitDone") thanks you ("you") for visiting its NowOniTunes services ("NOI Services") provided for the use of GetTheShitDone's audience ("Audience"), those who use that which is provided by GetTheShitDone. Please read the following Terms and Conditions ("Terms"). By using the NOI Services, you agree to a binding agreement between you and GetTheShitDone subject to the Terms listed below. GetTheShitDone reserves the right to change the Terms without notice to you or acceptance by you.
+            <p>By using NowOniTunes.com, you signify that you have read, understand and agree to be bound by these Terms and conditions.</p>
+            <p>NowOniTunes is concerned about the safety and privacy of all its Users, especially children. Therefore, children under the age of 13 are not permitted to use NowOniTunes.com.</p>
+            <p>NowOniTunes reserves the right to remove any image for any reason whatsoever. Specifically, any image uploaded that is pornographic or offensive in nature (including nudity, violence, sexual acts, or sexually provocative images.), infringes upon copyrights not held by the uploader, is illegal or violates any laws, will be deleted.</p>
+            <p>We reserve the right to ban any individual uploader from using our services for any reason.</p>
+            <p>We cannot be held liable for any damages. All data, photographs, messages, graphics, comments, text, tags, or other materials ("Content"), are the sole responsibility of the person from whom such Content originated. You, and not NowOniTunes, are entirely responsible for all Content that you upload, post, email, transmit or otherwise make available through NowOniTunes. NowOniTunes does not control the Content posted and does not guarantee the accuracy or integrity of such Content.</p>
+            <p>NowOniTunes shall not be liable for any statements or conduct of any third party using the service. By using NowOniTunes you may be exposed to Content that is indecent, objectionable or offensive.</p>
+            <p>NowOniTunes will not be liable in any way for any Content, including, but not limited to, any errors or omissions in any Content. NowOniTunes will not be liable for any loss or damage of any kind incurred as a result of the use of any Content posted, emailed, transmitted or otherwise made available on NowOniTunes. NowOniTunes assumes no responsibility for the timeliness, deletion, miss-delivery or failure to store any User content, or communication.</p>
+            <p>You agree to indemnify and hold NowOniTunes, its creators exempt from any claim or demand, including reasonable attorneys' fees, made by any third party due to or arising out of Content you submit, transmit, post or otherwise make available through NowOniTunes.</p>
 
-            <h2 class="cufon_normal">1. SUBMISSIONS</h2>
-            <p>You accept that the following Content ("Content") (including, but not limited to, text and images) may not be uploaded, posted, transmitted or otherwise submitted to NOI Services for any use including, but not limited to, online or print use, according to these Terms:</p>
-            <p>(a) any Content that is pornographic, illegal, threatening, abusive, harassing, tortuous, vulgar, obscene, libelous, invasive of another's privacy, hateful, racist, or otherwise objectionable;</p>
-            <p>(b) any Content that you do not have the legal right to transmit;</p>
-            <p>(c) any Content that infringes any patent, trademark, copyright, rights of privacy or publicity, or other proprietary rights of any party;</p>
-            <p>(d) any Content that contains software viruses or any other computer code designed to interrupt, destroy or limit the functionality of any computer software or hardware;</p>
-            <p>Should Content be found or reported to be in violation with, the previous terms, it is in GetTheShitDone's sole discretion as to what action it will take. GetTheShitDone reserves the right, but not the obligation, to deem any submitted Content as unacceptable at its sole discreation, not limited by the previous terms, and delete any Content made available by NOI Services.</p>
-            <p>GetTheShitDone does not have to inform you of its reasons for refusing service.</p>
-            <p>GetTheShitDone is not liable in any way (including, but not limited to) for any errors and omissions in any Content, or for any loss or damage of any kind incurred as a result of the use of any Content posted, transmitted, printed or otherwise made available via NOI Services. You agree that you must bear all risks associated with the Content you post to NOI Services. You acknowledge and agree that GetTheShitDone may preserve Content and may also disclose content if required to do so by law or in the good faith belief that such preservation or disclosure is reasonably necessary to: (a) comply with legal process; (b) enforce the Terms; (c) respond to claims that any Content violates the rights of third-parties; or (d) protect the rights, property, or personal safety of GetTheShitDone, NowOniTunes services, its users and the public.</p>
-            <p>You and not GetTheShitDone are entirely responsible for all Content you upload, post, transmit or otherwise submit to NOI Services. GetTheShitDone does not control Content posted using NOI Services and does not guarantee its accuracy, integrity or quality.</p>
-            <p>GetTheShitDone does not claim ownership of the Content you submit via NOI Services. GetTheShitDone does reserve the right to use Content submitted for the entertainment of its staff and audience in such a way as to not reveal the identity of you.</p>
+            <h2 class="cufon_normal">Statute of Limitations</h2>
 
-            <h2 class="cufon_normal">2. EXPORT AND INTERNATIONAL USE </h2>
-            <p>You are responsible for compliance with all local laws regarding online conduct and legal Content. You agree to comply with all applicable laws regarding the transmission of data from the country in which you reside.</p>
+            <p>You agree that regardless of any statute or law to the contrary, any claim or cause of action arising out of or related to use of the Service or the Terms of Service must be filed within one (1) year after such claim or cause of action arose or be forever barred.</p>
 
-            <h2 class="cufon_normal">3. PRIVACY POLICY</h2>
-            <p>Please review the information set forth in GetTheShitDone's Privacy Policy at http://www.GetTheShitDone.com/privacypolicy.html</p>
-            <h2 class="cufon_normal">4. SERVICE </h2>
-            <p>GetTheShitDone reserves the right to alter or discontinue NowOniTunes Services (or any part thereof) with or without notice at any time.</p>
-            <h2 class="cufon_normal">5. DISCLAIMER AND WARRANTIES </h2>
-            <p>YOU EXPRESSLY UNDERSTAND AND AGREE THAT:</p>
-            <p>(a) YOUR USE OF NOI SERVICES IS AT YOUR SOLE RISK. THE NOI SERVICES ARE PROVIDED ON AN "AS IS" AND "AS AVAILABLE" BASIS. GETTHESHITDONE EXPRESSLY DISCLAIMS ALL WARRANTIES OF ANY KIND, WHETHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT.</p>
-            <p>(b) GETTHESHITDONE WILL MAKE REASONABLE EFFORTS TO MAINTAIN NOI SERVICES, HOWEVER, GETTHESHITDONE IS NOT RESPONSIBLE FOR ANY DAMAGE, LOSS OF DATA, CUSTOMER INFORMATION OR VENDOR DATA, REVENUE, OR OTHER HARM TO BUSINESS ARISING OUT OF DELAYS, MISDELIVERY OR NONDELIVERY OF INFORMATION, RESTRICTION OR LOSS OF ACCESS, BUGS OR OTHER ERRORS, UNAUTHORIZED USE DUE TO YOUR SHARING OF ACCESS TO THE SERVICE, OR OTHER INTERACTION WITH THE SERVICE. YOU ARE RESPONSIBLE FOR MAINTAINING AND BACKING-UP YOUR DATA AND INFORMATION THAT MAY RESIDE ON NOI SERVICES. GETTHESHITDONE DOES NOT WARRANT THAT (i) NOI SERVICES WILL MEET YOUR SPECIFIC REQUIREMENTS, (ii) NOI SERVICES WILL BE UNINTERRUPTED, TIMELY, SECURE, OR ERROR-FREE, (iii) THE RESULTS THAT MAY BE OBTAINED FROM THE USE OF NOI SERVICES WILL BE ACCURATE OR RELIABLE, (iv) THE QUALITY OF ANY PRODUCTS, SERVICES, INFORMATION, OR OTHER MATERIAL PURCHASED OR OBTAINED BY YOU THROUGH NOI SERVICES WILL MEET YOUR EXPECTATIONS, AND (V) ANY ERRORS IN THE SOFTWARE WILL BE CORRECTED.</p>
-            <p>(c) ANY MATERIAL DOWNLOADED OR OTHERWISE OBTAINED THROUGH THE USE OF NOI SERVICES IS DONE AT YOUR OWN DISCRETION AND RISK AND THAT YOU WILL BE SOLELY RESPONSIBLE FOR ANY DAMAGE TO YOUR COMPUTER SYSTEM OR LOSS OF DATA THAT RESULTS FROM THE DOWNLOAD OF ANY SUCH MATERIAL.</p>
-            <p>(d) NO ADVICE OR INFORMATION, WHETHER ORAL OR WRITTEN, OBTAINED THROUGH OR FROM NOI SERVICES SHALL CREATE ANY WARRANTY NOT EXPRESSLY STATED IN THE TERMS.</p>
-            <h2 class="cufon_normal">6. LIMITATION OF LIABILITY </h2>
-            <p>YOU EXPRESSLY UNDERSTAND AND AGREE THAT GETTHESHITDONE SHALL NOT BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL OR EXEMPLARY DAMAGES, INCLUDING BUT NOT LIMITED TO, DAMAGES FOR LOSS OF PROFITS, GOODWILL, USE, DATA OR OTHER INTANGIBLE LOSSES (EVEN IF GETTHESHITDONE HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES), RESULTING FROM: (i) THE USE OR THE INABILITY TO USE NOI SERVICES; (ii) THE COST OF PROCUREMENT OF SUBSTITUTE GOODS AND SERVICES RESULTING FROM ANY GOODS, DATA, INFORMATION OR SERVICES PURCHASED OR OBTAINED OR MESSAGES RECEIVED OR TRANSACTIONS ENTERED INTO THROUGH OR FROM NOI SERVICES; (iii) UNAUTHORIZED ACCESS TO OR ALTERATION OF YOUR TRANSMISSIONS OR DATA; (iv) STATEMENTS OR CONDUCT OF ANY THIRD PARTY ON NOI SERVICES; OR (v) ANY OTHER MATTER RELATING TO NOI SERVICES.</p>
-            <h2 class="cufon_normal">7. EXCLUSIONS AND LIMITATIONS </h2>
-            <p>SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OF CERTAIN WARRANTIES OR THE LIMITATION OR EXCLUSION OF LIABILITY FOR INCIDENTAL OR CONSEQUENTIAL DAMAGES. ACCORDINGLY, SOME OF THE ABOVE LIMITATIONS OF SECTIONS 5 AND 6 MAY NOT APPLY TO YOU.</p>
-            <h2 class="cufon_normal">8. GENERAL</h2>
-            <p>If any part of these Terms is held to be invalid or unenforceable, then the invalid or unenforceable provision will be deemed superseded by a valid, enforceable provision most closely matching the intent of the original provision and the remainder of the Terms will continue in effect.</p>
-            <p>Notices to you may be made via either email or regular mail.</p>
-            <p>These Terms constitute the entire agreement between you and GetTheShitDone with respect to NOI Services, and supersede all other communications, written or oral, with regard to NOI Services.</p>
-            <p>You agree that regardless of any statute or law to the contrary, any claim or cause of action arising out of or related to use of NOI Services or the Terms must be filed within one (1) year after such claim or cause of action arose or be forever barred. The section titles in the Terms are for convenience only and have no legal or contractual effect.</p>
-            <h2 class="cufon_normal">9. USER SERVICE</h2>
-            <p>Please report any violations of the Terms by contacting us at this adress : thebeatles@nowonitunes.com</p>
+            <h2 class="cufon_normal">Improper Use of Data</h2>
+
+            <p>Data mining, "scraping", and/or unauthorized crawling of NowOniTunes by any means is prohibited unless explicit permission is given. Using any data from NowOniTunes (including images, data from images and/or users) that is not available through authorized channels is also prohibited unless explicit permission is given. Storing, saving and/or retaining images of any size is also prohibited.</p>
+
+            <h2 class="cufon_normal">Copyright</h2>
+
+            <p>By uploading your photos to NowOniTunes you give NowOniTunes permission to use or distribute your photos on NowOniTunes.com or affiliated s</p>
+            <p>All images uploaded are copyright © their respective o</p>
+            <p>For clarity, you retain all of your ownership rights in your Content. However, by submitting Content to NowOniTunes, you hereby grant NowOniTunes a worldwide, non-exclusive, royalty-free, sublicenseable and transferable license to use, reproduce, display, and perform the Content in connection with the Service and NowOniTunes (and its successors' and affiliates') website. You also hereby grant each user of the Service a non-exclusive license to access your Content through the Service, and to use, reproduce, distribute, display and perform such Content as permitted through the functionality of the Service and under these Terms of Service. The above licenses granted by you in media Content you submit to the Service terminate within a commercially reasonable time after you remove or delete your media from the Service. You understand and agree, however, that NowOniTunes may retain, but not display, distribute, or perform, server copies of your media that have been removed or deleted. The above licenses granted by you in user comments you submit are perpetual and irrevocable.</p>
+            <p>If you are a copyright owner or an agent thereof and believe that any Submission infringes upon your copyrights, you may submit a notification pursuant to thebeatles@nowonitunes.com with the following information in writing :</p>
+
+            <ul>
+                <li>1. A physical or electronic signature of a person authorized to act on behalf of the owner of an exclusive right that is allegedly infringed;</li>
+                <li>2. Identification of the copyrighted work claimed to have been infringed, or, if multiple copyrighted works at a single online site are covered by a single notification, a representative list of such works at that site;</li>
+                <li>3. Identification of the material that is claimed to be infringing or to be the subject of infringing activity and that is to be removed or access to which is to be disabled and information reasonably sufficient to permit the service provider to locate the material;</li>
+                <li>4. Information reasonably sufficient to permit the service provider to contact you, such as an address, telephone number, and, if available, an electronic mail;</li>
+                <li>5. A statement that you have a good faith belief that use of the material in the manner complained of is not authorized by the copyright owner, its agent, or the law; and</li>
+                <li>6. A statement that the information in the notification is accurate, and under penalty of perjury, that you are authorized to act on behalf of the owner of an exclusive right that is allegedly infringed.</li>
+            </ul>
+
+            <p>You acknowledge that if you fail to comply with all of the requirements cited below your notice may not be valid.</p>
+            <p>If you believe that your Submission that was removed (or to which access was disabled) is not infringing, or that you have the authorization from the copyright owner, the copyright owners agent, or pursuant to the law, to post and use the content in your User Submission, you may send a counter-notice containing the following information to the Copyright Agent:</p>
+
+            <ul>
+                <li>1. Your physical or electronic signature;</li>
+                <li>2. Identification of the content that has been removed or to which access has been disabled and the location at which the content appeared before it was removed or disabled;</li>
+                <li>3. A statement that you have a good faith belief that the content was removed or disabled as a result of mistake or a misidentification of the content; and</li>
+                <li>4. Your name, address, telephone number, and e-mail address, a statement that you will accept service of process from the person who provided notification of the alleged infringement.</li>
+            </ul>
+
+            <p>If a counter-notice is received by the Copyright Agent, NowOniTunes may send a copy of the counter-notice to the original complaining party informing that person that it may replace the removed content or cease disabling it in 10 business days. Unless the copyright owner files an action seeking a court order against the content provider, member or user, the removed content may be replaced, or access to it restored, in 10 to 14 business days or more after receipt of the counter-notice, at NowOniTunes sole discretion.</p>
+
+            <h2 class="cufon_normal">Repeat Infringers.</h2>
+
+            <p>NowOniTunes will terminate the access privileges of any IP adress who repeatedly infringes the copyright rights of others.</p>
         </div>
 
     </div>
