@@ -1,5 +1,31 @@
 #homepage
 
+    .share
+        background: $white
+        float: right
+        width: 295px
+        height: 30px
+        font-size: $font_small
+        +border-radius($border_radius_normal)
+
+        span
+            margin: 8px 0 0 10px
+            display: block
+            float: left
+            font-weight: bold
+
+    .baseline
+        margin: 0 0 20px 0
+
+        h3
+            font-size: $font_big
+            color: $black
+            margin: 0 0 20px 0
+
+        p
+            font-size: $font_normal
+            color: $grey
+
     form
         margin: 55px auto
         width: 605px
@@ -37,13 +63,13 @@
 
                 span
                     display: block
-                    font-size: $font_normal
+                    font-size: $font_small
                     font-weight: bold
                     color: $black
                     margin: 0 0 10px 0
 
                 input[type=text]
-                    font-size: $font_normal
+                    font-size: $font_small
                     color: $light_grey
                     background: image-url('input_background.jpg')
                     border: none
