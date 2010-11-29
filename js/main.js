@@ -46,3 +46,14 @@ function report(id)
     }
 }
 
+var cleanedInputs = {};
+
+function cleanInput(input)
+{
+    if (typeof cleanedInputs[input.readAttribute('name')] == 'undefined')
+    {
+        cleanedInputs[input.readAttribute('name')] = true;
+        input.value = '';
+    }
+}
+

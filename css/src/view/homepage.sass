@@ -1,77 +1,69 @@
 #homepage
 
     form
-        margin: 55px 0 50px 280px
+        margin: 55px auto
+        width: 605px
+
+        .col_left
+            float: left
+            width: 325px
+
+        .col_right
+            float: left
+            width: 280px
 
         div.terms
             margin: 20px 0 0 0
-            padding: 0 0 0 95px
-            width: 260px
-            height: 20px
+            height: 30px
             color: $grey
 
             input
                 margin: 0 10px 10px 0
                 float: left
 
-        div.captcha
-            margin: 20px 0 0 0
-            width: 354px
-            text-align: right
-            color: $grey
-
-            img
-                margin: 0 0 -6px 0
-
-            input
-                width: 50px
-                font-size: $font_small
-
-        div
-            margin: 10px 0
-            height: 40px
+        div.line
+            margin: 0 0 10px 0
+            height: 70px
 
             p
                 color: $light_grey
                 font-size: $font_tiny
-            p.notice_1
-                margin: 5px 0 0 100px
-            p.notice_2
-                margin: 12px 0 0 100px
-            p
+
+            p.notice
+                margin: 5px 0 0 0
 
             label
                 display: block
-                height: 20px
 
                 span
-                    float: left
                     display: block
-                    width: 100px
                     font-size: $font_normal
-                    color: $grey
-                    padding: 5px 0 0 0
+                    font-weight: bold
+                    color: $black
+                    margin: 0 0 10px 0
 
                 input[type=text]
                     font-size: $font_normal
-                    color: $grey
+                    color: $light_grey
                     background: image-url('input_background.jpg')
                     border: none
-                    width: 248px
-                    height: 29px
+                    display: block
+                    width: 274px
+                    height: 34px
                     padding: 0 3px
 
-                input[type=submit]
-                    width: 60px
-                    height: 29px
-                    display: block
-                    margin: 0 0 0 295px
-                    text-indent: -999px
-                    border: none
-                    cursor: pointer
-                    background: image-url('button_submit.jpg')
+        input[type=submit]
+            width: 127px
+            height: 32px
+            display: block
+            text-indent: -999px
+            margin: 10px 0 0 150px
+            border: none
+            cursor: pointer
+            background: image-url('create_button.png')
 
-                input[type=submit]:hover
-                    background: image-url('button_submit_hover.jpg')
+
+        //input[type=submit]:hover
+            //background: image-url('create_button_hover.png')
 
 

@@ -12,15 +12,15 @@ class Remote_Submit extends Remote
             header('Location: ' . Conf::get('ROOT_PATH'));
             exit();
         }
-        else if (!Tool::isOk($_POST['captcha']) || !Tool::isOk($_POST['band_name']) || !Tool::isOk($_FILES['band_cover']) || !isset($_FILES) || $_FILES['band_cover']['error'] == 4)
+        else if (!Tool::isOk($_POST['band_email']) || !Tool::isOk($_POST['band_name']) || !Tool::isOk($_FILES['band_cover']) || !isset($_FILES) || $_FILES['band_cover']['error'] == 4)
         {
-            $_SESSION['warning'] = 'You must complet the "brand\'s name", the "brand\'s cover" and email field and fill the captcha !';
+            $_SESSION['warning'] = 'You must complete the "band\'s name", the "band\'s cover" and email field!';
             header('Location: ' . Conf::get('ROOT_PATH'));
             exit();
         }
-        else if ($_SESSION['captcha'] != $_POST['captcha'])
+        else if (preg_match('/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i', $_POST['band_email']) == 0)
         {
-            $_SESSION['warning'] = 'Invalid information !';
+            $_SESSION['warning'] = 'Invalid email address !';
             header('Location: ' . Conf::get('ROOT_PATH'));
             exit();
         }
@@ -54,6 +54,7 @@ class Remote_Submit extends Remote
                 SET
                     `name` = "' . $_POST['band_name'] . '",
                     `homepage` = "' . $_POST['band_homepage'] . '",
+                    `email` = "' . $_POST['band_email'] . '",
                     `creation_date` = "' . time() . '",
                     `ip` = "' . $_SERVER['REMOTE_ADDR'] . '",
                     `view_date` = "' . time() . '"
