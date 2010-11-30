@@ -13,16 +13,16 @@
                 <li class="random">
                     <a href="#{ROOT_PATH}random">Random</a>
                 </li>
-                <li class="create">
-                    <a href="#{ROOT_PATH}">Create</a>
+                <li class="official">
+                    <a href="#{ROOT_PATH}official">Official Users</a>
                 </li>
-                <li class="share">
-                    <div class="twitter">
-                        <a href="http://twitter.com/home?status=#{twitter_status}" target="_blank" title="share on Twitter !"><img src="#{ROOT_PATH}media/layout/button_twitter.png"></a>
-                    </div>
-                    <div class="facebook">
-                        <a href="http://www.facebook.com/sharer.php?u=#{ROOT_PATH}&t=#{facebook_status}" target="_blank" title="share on Facebook !"><img src="#{ROOT_PATH}media/layout/button_facebook.png"></a>
-                    </div>
+                <li class="create">
+                    <a href="#{ROOT_PATH}create">Generator</a>
+                </li>
+                <li class="search">
+                    <form action="#{ROOT_PATH}" method="post">
+                        <input name="q" value="#{search_query}" type="text" />
+                    </form>
                 </li>
             </ul>
         </div>

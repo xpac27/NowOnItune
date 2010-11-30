@@ -14,6 +14,13 @@
     date_default_timezone_set('Europe/Paris');
     session_start();
 
+    // SEARCH
+    if (isset($_POST['q']))
+    {
+        header('Location: ' . Conf::get('ROOT_PATH') . 'search/' . $_POST['q']);
+        exit();
+    }
+
     // AUTOLOADER
     function __autoload($className)
     {

@@ -2,7 +2,11 @@
 
     <div class="page" id="homepage">
 
-        <div class="share"><span>You like it?</span></div>
+        <div class="share">
+            <span>You like it?</span>
+            <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.nowonitunes.com" data-text="Check this out! Everyone is on iTunes!" data-count="horizontal" data-via="NowOniTunes">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+            <!--<iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.nowonitunes.com&amp;layout=button_count&amp;show_faces=false&amp;width=250&amp;action=like&amp;font=arial&amp;colorscheme=light&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:250px; height:21px;" allowTransparency="true"></iframe>-->
+        </div>
 
         <div class="baseline">
             <h3 class="cufon_bold">Welcome to NowOniTunes</h3>

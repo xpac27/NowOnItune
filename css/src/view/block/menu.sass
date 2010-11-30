@@ -2,15 +2,14 @@
     margin: 20px 0
 
     .menu
-        height: 38px
+        height: 46px
 
         li
             float: left
             display: block
-            height: 38px
+            height: 46px
             background-position: center center
             background-repeat: no-repeat
-            text-indent: -9999px
             position: relative
 
             a
@@ -19,8 +18,9 @@
                 height: 100%
 
         li.home
-            width: 200px
+            width: 161px
             cursor: pointer
+            text-indent: -9999px
             background-image: image-url('button_home.png')
         li.home:hover
             background-image: image-url('button_home_hover.png')
@@ -28,41 +28,58 @@
         li.latest
             width: 103px
             cursor: pointer
+            text-indent: -9999px
             background-image: image-url('button_latest.png')
         li.latest:hover
             background-image: image-url('button_latest_hover.png')
 
         li.top
-            width: 103px
+            width: 84px
             cursor: pointer
+            text-indent: -9999px
             background-image: image-url('button_top.png')
         li.top:hover
             background-image: image-url('button_top_hover.png')
 
         li.random
-            width: 103px
+            width: 107px
             cursor: pointer
+            text-indent: -9999px
             background-image: image-url('button_random.png')
         li.random:hover
             background-image: image-url('button_random_hover.png')
 
-        li.create
-            width: 207px
+        li.official
+            width: 135px
             cursor: pointer
+            text-indent: -9999px
+            background-image: image-url('button_official.png')
+        li.official:hover
+            background-image: image-url('button_official_hover.png')
+
+        li.create
+            width: 114px
+            cursor: pointer
+            text-indent: -9999px
             background-image: image-url('button_create.png')
         li.create:hover
             background-image: image-url('button_create_hover.png')
 
-        li.share
-            padding: 0 0 0 80px
-            width: 184px
-            text-indent: 0
-            background-image: image-url('button_share.png')
+        li.search
+            width: 274px
+            background-image: image-url('search_background.png')
 
-            .twitter,
-            .facebook
-                width: 75px
-                height: 25px
-                float: left
-                margin: 6px 5px 0 0
+            input
+                width: 210px
+                padding: 0 20px 0 0
+                height: 22px
+                margin: 11px 0 0 28px
+                border: none
+                background: none
+                font-size: $font_normal
+                color: $grey
+                background: image-url('search_icon.png')
+                background-repeat: no-repeat
+                background-position: center right
+
 
