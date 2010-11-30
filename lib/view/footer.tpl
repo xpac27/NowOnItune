@@ -1,17 +1,36 @@
 
         <div id="footer">
-            <p class="right">
-                <a href="http://we.GetTheShitDone.com" target="_blank">we.GetTheShitDone.com</a>
-            </p>
-            <p class="left">
-                <!-- SECTION report -->
-                <a href="javascript:report('#{band_extendedId}')">report this page</a><br/>
-                <!-- END report -->
-                This site is not affiliated with Apple.<br/>
-                It's an original way to promote your iTunes account.<br/>
-                iTunes is a registered trademark of <a href="http://www.apple.com/" target="_blank">Apple, Inc</a>.<br/>
+            <div class="links">
+                <ul>
+                    <li>
+                        <a href="#{ROOT_PATH}official" target="_blank">Officials</a>
+                    </li>
+                    <li>
+                        <a href="#{ROOT_PATH}" target="_blank">Need help?</a>
+                    </li>
+                    <li>
+                        <a href="#{ROOT_PATH}" target="_blank">FAQ</a>
+                    </li>
+                    <li>
+                        <a href="#{ROOT_PATH}" target="_blank">Advertising</a>
+                    </li>
+                    <li>
+                        <a href="http://we.GetTheShitDone.com" target="_blank">we.GetTheShitDone.com</a>
+                    </li>
+                    <!-- SECTION report -->
+                    <li>
+                        <a href="javascript:report('#{band_extendedId}')">Report abuse</a><br/>
+                    </li>
+                    <!-- END report -->
+                </ul>
+            </div>
+
+            <p class="credits">
+                Credits - 2010 © NowOniTunes.com<br/>
                 <a href="#{ROOT_PATH}terms">Terms of use</a>
             </p>
+
+            <p class="notice">This site is not affiliated with Apple. It's an original way to promote your iTunes account. iTunes is a registered trademark of <a href="http://www.apple.com/" target="_blank">Apple, Inc</a>.</p>
         </div>
 
     </div>
