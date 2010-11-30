@@ -1,3 +1,8 @@
+@mixin preload-image($image)
+    background-image: image-url($image)
+    background-position: -9999px 0
+    background-repeat: no-repeat
+
 #menu
     margin: 20px 0
 
@@ -22,6 +27,8 @@
             width: 200px
             cursor: pointer
             background-image: image-url('button_home.png')
+            a
+                @include preload-image('button_home_hover.png')
         li.home:hover
             background-image: image-url('button_home_hover.png')
 
@@ -29,6 +36,8 @@
             width: 103px
             cursor: pointer
             background-image: image-url('button_latest.png')
+            a
+                @include preload-image('button_latest_hover.png')
         li.latest:hover
             background-image: image-url('button_latest_hover.png')
 
@@ -36,6 +45,8 @@
             width: 103px
             cursor: pointer
             background-image: image-url('button_top.png')
+            a
+                @include preload-image('button_top_hover.png')
         li.top:hover
             background-image: image-url('button_top_hover.png')
 
@@ -43,6 +54,8 @@
             width: 103px
             cursor: pointer
             background-image: image-url('button_random.png')
+            a
+                @include preload-image('button_random_hover.png')
         li.random:hover
             background-image: image-url('button_random_hover.png')
 
@@ -50,6 +63,8 @@
             width: 207px
             cursor: pointer
             background-image: image-url('button_create.png')
+            a
+                @include preload-image('button_create_hover.png')
         li.create:hover
             background-image: image-url('button_create_hover.png')
 
